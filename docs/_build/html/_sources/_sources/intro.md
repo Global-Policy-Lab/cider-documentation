@@ -1,0 +1,7 @@
+# Introduction
+
+Cider is a set of software tools for targeting poverty with mobile phone data. Download cider from [github](https://github.com/emilylaiken/cider). 
+
+Cider is based on the poverty targeting methods described in [Aiken et al. (2022)](https://www.nature.com/articles/s41586-022-04484-9). A goal of cider is to make these methods easier to use and replicable across contexts. A second goal is making it straightforward to compare targeting methods, including the phone-based approach built by cider: while the empirical results on the accuracy of the phone-based approach in [Aiken et al. (2022)](https://www.nature.com/articles/s41586-022-04484-9) are promising, it is still not known how the phone-based approach compares to alternatives across contexts. 
+
+Because cider works on digital data, it has two significant strengths: it can identify and reach people rapidly (speed) and do so on the order of millions of people (scale). Therefore, emergencies such as large-scale shocks like famines and flooding that require speed and scale may be the most natural use cases for cider. It may also be possible to combine the phone-based approach in cider with alternative and more traditional approaches to poverty targeting; an article [by GiveDirectly](https://medium.com/center-for-effective-global-action/how-precision-aid-and-machine-learning-based-targeting-can-complement-existing-social-protection-de3bc3211fd2) discusses the beginnings of such a complementary approach. 
