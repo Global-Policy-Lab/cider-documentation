@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Featurizer</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Machine Learning" href="documentation_ml.html" />
+    <link rel="prev" title="Poverty Outcome Generation from Survey Data" href="poverty_survey.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Open Source Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/goals.html">
+   Goals for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/features.html">
+   Overview of features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/privacy.html">
+   Adherance to data privacy standards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/trainingdata.html">
+   Recommendations: Training Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/verification.html">
+   Recommendations: Output verification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/research.html">
+   Research and resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/opensource.html">
+   Open source management
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Quickstart
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="config.html">
+   Configuration file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="poverty_survey.html">
+   Poverty Outcome Generation from Survey Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Featurizer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_ml.html">
+   Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_home_location.html">
+   Home Location Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_targeting.html">
+   Targeting Evaluations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_fairness.html">
+   Fairness Evaluations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_satellite.html">
+   Satellite
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Standardized data formats
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/cdr.html">
+   CDR (call and text)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/antennas.html">
+   Antennas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/recharges.html">
+   Recharges
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/mobile_data.html">
+   Mobile Data Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/mobile_money.html">
+   Mobile Money
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/spatial.html">
+   Spatial Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/features.html">
+   Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/poverty_labels.html">
+   Poverty Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/home_locations.html">
+   Home Location Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/survey_data.html">
+   Survey Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/targeting_data.html">
+   Targeting and Fairness Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API REFERENCE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/datastore.html">
+   Datastore API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/poverty_survey.html">
+   Survey API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/featurizer.html">
+   Featurizer API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/ml.html">
+   ML API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/home_location.html">
+   Home Location API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/targeting.html">
+   Targeting API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/fairness.html">
+   Fairness API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/satellite.html">
+   Satellite API Reference
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Global-Policy-Lab/cider/master?urlpath=tree/docs/quickstart/documentation_featurizer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Global-Policy-Lab/cider"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fquickstart/documentation_featurizer.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/quickstart/documentation_featurizer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Featurizer</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="featurizer">
+<h1>Featurizer<a class="headerlink" href="#featurizer" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cider.datastore</span> <span class="kn">import</span> <span class="n">DataStore</span>
+<span class="kn">from</span> <span class="nn">cider.featurizer</span> <span class="kn">import</span> <span class="n">Featurizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load some mobile phone metadata. See <a class="reference internal" href="../data_formats/cdr.html"><span class="doc">standardized data formats</span></a> for file schemas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This path should point to your cider installation, where configs and data for this demo are located.</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">cider_installation_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../cider&#39;</span><span class="p">)</span>
+
+<span class="n">datastore</span> <span class="o">=</span> <span class="n">DataStore</span><span class="p">(</span><span class="n">config_file_path_string</span><span class="o">=</span> <span class="n">cider_installation_directory</span> <span class="o">/</span> <span class="s1">&#39;configs&#39;</span> <span class="o">/</span> <span class="s1">&#39;config_quickstart.yml&#39;</span><span class="p">)</span>
+<span class="n">featurizer</span> <span class="o">=</span> <span class="n">Featurizer</span><span class="p">(</span><span class="n">datastore</span><span class="o">=</span><span class="n">datastore</span><span class="p">,</span> <span class="n">clean_folders</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting default log level to &quot;WARN&quot;.
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/03/31 13:21:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Loading CDR...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading recharges...
+SUCCESS!
+Loading mobile data...
+Loading mobile data...
+Loading antennas...
+Warning: 10 antennas missing location
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remove duplicate records, filter to just a specific date range, remove outlier days and spammers based on call and text volumes, and remove duplicate records in CDR, recharges, mobile data records, and mobile money records.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deduplication</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">deduplicate</span><span class="p">()</span>
+
+<span class="c1"># Filter to just January 1 - February 28 (inclusive)</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filter_dates</span><span class="p">(</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-28&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove transactions involving spammers who place 1.8+ calls/texts per active day</span>
+<span class="n">spammers</span> <span class="o">=</span> <span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">remove_spammers</span><span class="p">(</span><span class="n">spammer_threshold</span><span class="o">=</span><span class="mf">1.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of spammers identified: 19
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all records from days more than 2 standard deviations from the mean transaction volume</span>
+<span class="n">outlier_days</span> <span class="o">=</span> <span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filter_outlier_days</span><span class="p">(</span><span class="n">num_sds</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outliers removed: 2020-01-24, 2020-02-06
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/leo/Documents/gpl/cider/cider/datastore.py:435: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  timeseries = timeseries.groupby(&#39;day&#39;, as_index=False).agg(&#39;sum&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Produce summary statistics and plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">featurizer</span><span class="o">.</span><span class="n">diagnostic_statistics</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CDR&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 91299, &#39;Subscribers&#39;: 981, &#39;Recipients&#39;: 981}, &#39;Recharges&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 9315, &#39;Subscribers&#39;: 783}, &#39;Mobile Data&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 9388, &#39;Subscribers&#39;: 592}, &#39;Mobile Money&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 5371, &#39;Subscribers&#39;: 682, &#39;Recipients&#39;: 682}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">diagnostic_plots</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<img alt="../_images/documentation_featurizer_9_1.png" src="../_images/documentation_featurizer_9_1.png" />
+<img alt="../_images/documentation_featurizer_9_2.png" src="../_images/documentation_featurizer_9_2.png" />
+<img alt="../_images/documentation_featurizer_9_3.png" src="../_images/documentation_featurizer_9_3.png" />
+<img alt="../_images/documentation_featurizer_9_4.png" src="../_images/documentation_featurizer_9_4.png" />
+<img alt="../_images/documentation_featurizer_9_5.png" src="../_images/documentation_featurizer_9_5.png" />
+<img alt="../_images/documentation_featurizer_9_6.png" src="../_images/documentation_featurizer_9_6.png" />
+<img alt="../_images/documentation_featurizer_9_7.png" src="../_images/documentation_featurizer_9_7.png" />
+<img alt="../_images/documentation_featurizer_9_8.png" src="../_images/documentation_featurizer_9_8.png" />
+</div>
+</div>
+<p>Featurize the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">cdr_features_spark</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">international_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">location_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">recharges_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">mobiledata_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">mobilemoney_features</span><span class="p">()</span>
+
+<span class="n">featurizer</span><span class="o">.</span><span class="n">all_features</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we read the features back with pandas in to see what the table looks like. This works fine because our synthetic dataset is small, but such files can be too large to fit in memory if the number of subscribers is large; Cider uses <a class="reference external" href="https://spark.apache.org/docs/latest/api/python/">pyspark</a> to manage large datasets. Another option for working with large datasets is <a class="reference external" href="https://www.dask.org/">dask</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">path_to_all_features</span> <span class="o">=</span> <span class="n">datastore</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">working</span><span class="o">.</span><span class="n">directory_path</span> <span class="o">/</span> <span class="s1">&#39;featurizer&#39;</span> <span class="o">/</span> <span class="s1">&#39;datasets&#39;</span> <span class="o">/</span> <span class="s1">&#39;features.csv&#39;</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_all_features</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>active_days_allweek_allday</th>
+      <th>active_days_allweek_day</th>
+      <th>active_days_allweek_night</th>
+      <th>active_days_weekday_allday</th>
+      <th>active_days_weekday_day</th>
+      <th>active_days_weekday_night</th>
+      <th>active_days_weekend_allday</th>
+      <th>active_days_weekend_day</th>
+      <th>active_days_weekend_night</th>
+      <th>...</th>
+      <th>mobilemoney_outgoing_p2p_amount_min</th>
+      <th>mobilemoney_outgoing_p2p_amount_max</th>
+      <th>mobilemoney_outgoing_p2p_balance_before_mean</th>
+      <th>mobilemoney_outgoing_p2p_balance_before_min</th>
+      <th>mobilemoney_outgoing_p2p_balance_before_max</th>
+      <th>mobilemoney_outgoing_p2p_balance_after_mean</th>
+      <th>mobilemoney_outgoing_p2p_balance_after_min</th>
+      <th>mobilemoney_outgoing_p2p_balance_after_max</th>
+      <th>mobilemoney_outgoing_p2p_txns</th>
+      <th>mobilemoney_outgoing_p2p_contacts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AASxnSdfla</td>
+      <td>56</td>
+      <td>46</td>
+      <td>50</td>
+      <td>40</td>
+      <td>31</td>
+      <td>35</td>
+      <td>16</td>
+      <td>15</td>
+      <td>15</td>
+      <td>...</td>
+      <td>31.799332</td>
+      <td>58.921886</td>
+      <td>187.554639</td>
+      <td>138.324660</td>
+      <td>228.47707</td>
+      <td>138.780946</td>
+      <td>106.525330</td>
+      <td>180.20863</td>
+      <td>6.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ANnpaBqoKb</td>
+      <td>55</td>
+      <td>45</td>
+      <td>47</td>
+      <td>40</td>
+      <td>36</td>
+      <td>33</td>
+      <td>15</td>
+      <td>9</td>
+      <td>14</td>
+      <td>...</td>
+      <td>37.976850</td>
+      <td>57.337646</td>
+      <td>182.190155</td>
+      <td>158.963560</td>
+      <td>223.29039</td>
+      <td>137.548449</td>
+      <td>106.978870</td>
+      <td>185.31354</td>
+      <td>3.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AWrbWzWkYp</td>
+      <td>55</td>
+      <td>45</td>
+      <td>46</td>
+      <td>39</td>
+      <td>32</td>
+      <td>33</td>
+      <td>16</td>
+      <td>13</td>
+      <td>13</td>
+      <td>...</td>
+      <td>53.090126</td>
+      <td>58.511192</td>
+      <td>202.108686</td>
+      <td>108.117546</td>
+      <td>272.34055</td>
+      <td>146.345222</td>
+      <td>52.118343</td>
+      <td>219.25041</td>
+      <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AaJProAtlR</td>
+      <td>56</td>
+      <td>48</td>
+      <td>48</td>
+      <td>41</td>
+      <td>36</td>
+      <td>34</td>
+      <td>15</td>
+      <td>12</td>
+      <td>14</td>
+      <td>...</td>
+      <td>32.858997</td>
+      <td>68.323395</td>
+      <td>235.638050</td>
+      <td>194.502760</td>
+      <td>287.86615</td>
+      <td>188.334709</td>
+      <td>143.178710</td>
+      <td>242.73692</td>
+      <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ApDvhzOUJr</td>
+      <td>56</td>
+      <td>39</td>
+      <td>51</td>
+      <td>40</td>
+      <td>28</td>
+      <td>36</td>
+      <td>16</td>
+      <td>11</td>
+      <td>15</td>
+      <td>...</td>
+      <td>44.307076</td>
+      <td>52.375270</td>
+      <td>192.653709</td>
+      <td>185.676930</td>
+      <td>199.63050</td>
+      <td>144.312531</td>
+      <td>133.301650</td>
+      <td>155.32341</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 1122 columns</p>
+</div></div></div>
+</div>
+<p>Plot the distributions of some of the features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">feature_plots</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/documentation_featurizer_15_01.png" src="../_images/documentation_featurizer_15_01.png" />
+<img alt="../_images/documentation_featurizer_15_11.png" src="../_images/documentation_featurizer_15_11.png" />
+<img alt="../_images/documentation_featurizer_15_21.png" src="../_images/documentation_featurizer_15_21.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<img alt="../_images/documentation_featurizer_15_41.png" src="../_images/documentation_featurizer_15_41.png" />
+<img alt="../_images/documentation_featurizer_15_51.png" src="../_images/documentation_featurizer_15_51.png" />
+<img alt="../_images/documentation_featurizer_15_61.png" src="../_images/documentation_featurizer_15_61.png" />
+<img alt="../_images/documentation_featurizer_15_71.png" src="../_images/documentation_featurizer_15_71.png" />
+<img alt="../_images/documentation_featurizer_15_81.png" src="../_images/documentation_featurizer_15_81.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AnalysisException</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">featurizer</span><span class="o">.</span><span class="n">feature_plots</span><span class="p">()</span>
+
+<span class="nn">File ~/Documents/gpl/cider/cider/featurizer.py:739,</span> in <span class="ni">Featurizer.feature_plots</span><span class="nt">(self, read_from_disk)</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="k">if</span> <span class="n">subscribers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>     <span class="n">users</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;cdr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subscribers</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">739</span>     <span class="nb">slice</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">[</span><span class="n">a</span><span class="p">]])</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="nb">slice</span><span class="p">[</span><span class="s1">&#39;slice_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slice_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">741</span>     <span class="n">boxplot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">slice</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/cider/lib/python3.8/site-packages/pyspark/sql/dataframe.py:2023,</span> in <span class="ni">DataFrame.select</span><span class="nt">(self, *cols)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">:</span> <span class="s2">&quot;ColumnOrName&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;DataFrame&quot;</span><span class="p">:</span>  <span class="c1"># type: ignore[misc]</span>
+<span class="g g-Whitespace">   </span><span class="mi">2003</span>     <span class="sd">&quot;&quot;&quot;Projects a set of expressions and returns a new :class:`DataFrame`.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2004</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2005</span><span class="sd">     .. versionadded:: 1.3.0</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2021</span><span class="sd">     [Row(name=&#39;Alice&#39;, age=12), Row(name=&#39;Bob&#39;, age=15)]</span>
+<span class="g g-Whitespace">   </span><span class="mi">2022</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">2023</span>     <span class="n">jdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jcols</span><span class="p">(</span><span class="o">*</span><span class="n">cols</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2024</span>     <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparkSession</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/cider/lib/python3.8/site-packages/py4j/java_gateway.py:1321,</span> in <span class="ni">JavaMember.__call__</span><span class="nt">(self, *args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1315</span> <span class="n">command</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">CALL_COMMAND_NAME</span> <span class="o">+</span>\
+<span class="g g-Whitespace">   </span><span class="mi">1316</span>     <span class="bp">self</span><span class="o">.</span><span class="n">command_header</span> <span class="o">+</span>\
+<span class="g g-Whitespace">   </span><span class="mi">1317</span>     <span class="n">args_command</span> <span class="o">+</span>\
+<span class="g g-Whitespace">   </span><span class="mi">1318</span>     <span class="n">proto</span><span class="o">.</span><span class="n">END_COMMAND_PART</span>
+<span class="g g-Whitespace">   </span><span class="mi">1320</span> <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_client</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1321</span> <span class="n">return_value</span> <span class="o">=</span> <span class="n">get_return_value</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1322</span>     <span class="n">answer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1324</span> <span class="k">for</span> <span class="n">temp_arg</span> <span class="ow">in</span> <span class="n">temp_args</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1325</span>     <span class="n">temp_arg</span><span class="o">.</span><span class="n">_detach</span><span class="p">()</span>
+
+<span class="nn">File ~/miniconda3/envs/cider/lib/python3.8/site-packages/pyspark/sql/utils.py:196,</span> in <span class="ni">capture_sql_exception.&lt;locals&gt;.deco</span><span class="nt">(*a, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="n">converted</span> <span class="o">=</span> <span class="n">convert_exception</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">java_exception</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">converted</span><span class="p">,</span> <span class="n">UnknownException</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="c1"># Hide where the exception came from that shows a non-Pythonic</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="c1"># JVM exception message.</span>
+<span class="ne">--&gt; </span><span class="mi">196</span>     <span class="k">raise</span> <span class="n">converted</span> <span class="kn">from</span> <span class="bp">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="k">raise</span>
+
+<span class="ne">AnalysisException</span>: Column &#39;cdr_active_days__allweek__day__callandtext&#39; does not exist. Did you mean one of the following? [active_days_allweek_allday, active_days_weekday_allday, active_days_allweek_day, active_days_allweek_night, active_days_weekday_night, active_days_weekend_allday, active_days_weekday_day, active_days_weekend_night, call_duration_allweek_day_call_max, call_duration_allweek_day_call_mean, call_duration_allweek_day_call_std, active_days_weekend_day, call_duration_allweek_day_call_median, call_duration_allweek_day_call_min, interevent_time_allweek_day_call_max, interevent_time_allweek_day_call_mean, interevent_time_allweek_day_call_std, balance_of_contacts_allweek_day_call_max, balance_of_contacts_allweek_day_call_mean, balance_of_contacts_allweek_day_call_std, call_duration_allweek_allday_call_max, call_duration_allweek_allday_call_mean, call_duration_allweek_allday_call_std, call_duration_allweek_day_call_kurtosis, call_duration_allweek_day_call_skewness, interevent_time_allweek_day_call_median, interevent_time_allweek_day_call_min, balance_of_contacts_allweek_day_call_median, balance_of_contacts_allweek_day_call_min, call_duration_allweek_allday_call_median, call_duration_allweek_allday_call_min, call_duration_allweek_night_call_max, call_duration_allweek_night_call_mean, call_duration_allweek_night_call_std, interevent_time_allweek_allday_call_max, interevent_time_allweek_allday_call_mean, interevent_time_allweek_allday_call_std, interevent_time_allweek_day_call_kurtosis, interevent_time_allweek_day_call_skewness, number_of_contacts_allweek_day_call, number_of_contacts_allweek_day_text, balance_of_contacts_allweek_allday_call_max, balance_of_contacts_allweek_allday_call_mean, balance_of_contacts_allweek_allday_call_std, balance_of_contacts_allweek_day_call_kurtosis, balance_of_contacts_allweek_day_call_skewness, call_duration_allweek_allday_call_kurtosis, call_duration_allweek_allday_call_skewness, call_duration_allweek_night_call_median, call_duration_allweek_night_call_min, call_duration_weekday_day_call_max, call_duration_weekday_day_call_mean, call_duration_weekday_day_call_std, call_duration_weekend_day_call_max, call_duration_weekend_day_call_mean, call_duration_weekend_day_call_std, entropy_of_contacts_allweek_day_call, entropy_of_contacts_allweek_day_text, entropy_of_contacts_weekday_allday_text, interactions_per_contact_allweek_day_call_max, interactions_per_contact_allweek_day_call_mean, interactions_per_contact_allweek_day_call_std, interevent_time_allweek_allday_call_median, interevent_time_allweek_allday_call_min, interevent_time_allweek_night_call_max, interevent_time_allweek_night_call_mean, interevent_time_allweek_night_call_std, number_of_contacts_allweek_allday_text, number_of_contacts_weekday_allday_text, percent_at_home_allweek_allday, percent_at_home_weekday_allday, percent_nocturnal_weekday_call, percent_nocturnal_weekday_text, response_delay_text_allweek_day_max, response_delay_text_allweek_day_mean, response_delay_text_allweek_day_median, response_delay_text_allweek_day_skewness, response_delay_text_weekday_allday_max, response_delay_text_weekday_allday_mean, response_rate_text_weekday_allday, balance_of_contacts_allweek_allday_call_median, balance_of_contacts_allweek_allday_call_min, balance_of_contacts_allweek_night_call_max, balance_of_contacts_allweek_night_call_mean, balance_of_contacts_allweek_night_call_std, call_duration_allweek_night_call_kurtosis, call_duration_allweek_night_call_skewness, call_duration_weekday_day_call_median, call_duration_weekday_day_call_min, call_duration_weekend_day_call_median, call_duration_weekend_day_call_min, entropy_of_contacts_allweek_allday_text, frequent_antennas_weekday_allday, interactions_per_contact_allweek_day_call_median, interactions_per_contact_allweek_day_call_min, interevent_time_allweek_allday_call_kurtosis, interevent_time_allweek_allday_call_skewness, interevent_time_allweek_day_text_max, interevent_time_allweek_day_text_mean, interevent_time_allweek_day_text_median, interevent_time_allweek_day_text_std, interevent_time_allweek_night_call_median, interevent_time_allweek_night_call_min, number_of_contacts_allweek_allday_call, percent_at_home_allweek_day, response_delay_text_allweek_day_min, response_delay_text_allweek_day_std, response_delay_text_weekday_allday_min, response_delay_text_weekday_allday_std, balance_of_contacts_allweek_allday_call_kurtosis, balance_of_contacts_allweek_allday_call_skewness, balance_of_contacts_allweek_day_text_max, balance_of_contacts_allweek_day_text_mean, balance_of_contacts_allweek_day_text_median, balance_of_contacts_allweek_day_text_std, balance_of_contacts_allweek_night_call_median, balance_of_contacts_allweek_night_call_min, balance_of_contacts_weekday_day_call_max, balance_of_contacts_weekday_day_call_mean, balance_of_contacts_weekday_day_call_std, balance_of_contacts_weekend_day_call_max, balance_of_contacts_weekend_day_call_mean, balance_of_contacts_weekend_day_call_std, call_duration_weekday_allday_call_max, call_duration_weekday_allday_call_mean, call_duration_weekday_allday_call_std, call_duration_weekday_day_call_kurtosis, call_duration_weekday_day_call_skewness, call_duration_weekend_day_call_kurtosis, call_duration_weekend_day_call_skewness, entropy_of_antennas_weekday_allday, entropy_of_contacts_allweek_allday_call, entropy_of_contacts_weekday_day_text, entropy_of_contacts_weekend_allday_text, frequent_antennas_allweek_allday, interactions_per_contact_allweek_allday_call_max, interactions_per_contact_allweek_allday_call_mean, interactions_per_contact_allweek_allday_call_std, interactions_per_contact_allweek_day_call_kurtosis, interactions_per_contact_allweek_day_call_skewness, interevent_time_allweek_day_text_kurtosis, interevent_time_allweek_day_text_min, interevent_time_allweek_day_text_skewness, interevent_time_allweek_night_call_kurtosis, interevent_time_allweek_night_call_skewness, interevent_time_weekday_day_call_max, interevent_time_weekday_day_call_mean, interevent_time_weekday_day_call_std, interevent_time_weekend_day_call_max, interevent_time_weekend_day_call_mean, interevent_time_weekend_day_call_std, number_of_antennas_allweek_allday, number_of_antennas_weekday_allday, number_of_contacts_allweek_night_call, number_of_contacts_allweek_night_text, number_of_contacts_weekday_day_text, number_of_contacts_weekend_allday_text, number_of_interactions_in_allweek_day_call, number_of_interactions_in_allweek_day_text, number_of_interactions_in_weekday_allday_text, number_of_interactions_out_weekday_allday_text, percent_at_home_allweek_night, percent_at_home_weekday_night, percent_at_home_weekend_allday, percent_nocturnal_allweek_call, percent_nocturnal_allweek_text, percent_nocturnal_weekend_call, percent_nocturnal_weekend_text, radius_of_gyration_weekday_allday, response_delay_text_allweek_allday_max, response_delay_text_allweek_allday_mean, response_delay_text_allweek_allday_median, response_delay_text_allweek_allday_skewness, response_delay_text_allweek_day_kurtosis, response_delay_text_weekday_allday_median, response_delay_text_weekday_day_max, response_delay_text_weekday_day_mean, response_delay_text_weekday_day_median, response_delay_text_weekday_day_std, response_delay_text_weekend_allday_max, response_delay_text_weekend_allday_mean, response_rate_text_allweek_allday, response_rate_text_weekday_night, response_rate_text_weekend_allday, balance_of_contacts_allweek_day_text_kurtosis, balance_of_contacts_allweek_day_text_min, balance_of_contacts_allweek_day_text_skewness, balance_of_contacts_allweek_night_call_kurtosis, balance_of_contacts_allweek_night_call_skewness, balance_of_contacts_weekday_allday_text_max, balance_of_contacts_weekday_allday_text_min, balance_of_contacts_weekday_allday_text_std, balance_of_contacts_weekday_day_call_median, balance_of_contacts_weekday_day_call_min, balance_of_contacts_weekend_day_call_median, balance_of_contacts_weekend_day_call_min, call_duration_weekday_allday_call_median, call_duration_weekday_allday_call_min, call_duration_weekday_night_call_max, call_duration_weekday_night_call_mean, call_duration_weekday_night_call_std, call_duration_weekend_allday_call_max, call_duration_weekend_allday_call_mean, call_duration_weekend_allday_call_std, entropy_of_antennas_allweek_allday, entropy_of_contacts_allweek_night_call, entropy_of_contacts_allweek_night_text, entropy_of_contacts_weekday_night_text, frequent_antennas_allweek_day, frequent_antennas_weekday_night, frequent_antennas_weekend_allday, interactions_per_contact_allweek_allday_call_median, interactions_per_contact_allweek_allday_call_min, interactions_per_contact_allweek_night_call_max, interactions_per_contact_allweek_night_call_mean, interactions_per_contact_allweek_night_call_std, interactions_per_contact_weekday_day_call_max, interactions_per_contact_weekday_day_call_mean, interactions_per_contact_weekday_day_call_std, interactions_per_contact_weekend_day_call_max, interactions_per_contact_weekend_day_call_mean, interactions_per_contact_weekend_day_call_std, interevent_time_allweek_allday_text_max, interevent_time_allweek_allday_text_mean, interevent_time_allweek_allday_text_median, interevent_time_allweek_allday_text_min, interevent_time_allweek_allday_text_std, interevent_time_weekday_allday_text_max, interevent_time_weekday_allday_text_min, interevent_time_weekday_allday_text_std, interevent_time_weekday_day_call_median, interevent_time_weekday_day_call_min, interevent_time_weekend_day_call_median, interevent_time_weekend_day_call_min, number_of_antennas_allweek_day, number_of_contacts_weekday_night_text, number_of_interactions_alldir_weekday_allday_text, number_of_interactions_in_allweek_allday_text, number_of_interactions_out_allweek_day_call, number_of_interactions_out_allweek_day_text, percent_at_home_weekday_day, percent_pareto_interactions_weekday_allday_text, radius_of_gyration_allweek_allday, response_delay_text_allweek_allday_min, response_delay_text_allweek_allday_std, response_delay_text_allweek_night_max, response_delay_text_allweek_night_mean, response_delay_text_allweek_night_median, response_delay_text_allweek_night_skewness, response_delay_text_weekday_day_kurtosis, response_delay_text_weekday_day_min, response_delay_text_weekday_day_skewness, response_delay_text_weekday_night_max, response_delay_text_weekday_night_mean, response_delay_text_weekday_night_std, response_delay_text_weekend_allday_min, response_delay_text_weekend_allday_std, response_delay_text_weekend_day_max, response_delay_text_weekend_day_mean, response_delay_text_weekend_day_median, response_delay_text_weekend_day_skewness, response_rate_text_allweek_day, response_rate_text_weekday_day, balance_of_contacts_allweek_allday_text_max, balance_of_contacts_allweek_allday_text_mean, balance_of_contacts_allweek_allday_text_median, balance_of_contacts_allweek_allday_text_min, balance_of_contacts_allweek_allday_text_std, balance_of_contacts_weekday_allday_text_mean, balance_of_contacts_weekday_day_call_kurtosis, balance_of_contacts_weekday_day_call_skewness, balance_of_contacts_weekday_day_text_std, balance_of_contacts_weekend_day_call_kurtosis, balance_of_contacts_weekend_day_call_skewness, call_duration_weekday_allday_call_kurtosis, call_duration_weekday_allday_call_skewness, call_duration_weekday_night_call_median, call_duration_weekday_night_call_min, call_duration_weekend_allday_call_median, call_duration_weekend_allday_call_min, call_duration_weekend_night_call_max, call_duration_weekend_night_call_mean, call_duration_weekend_night_call_std, entropy_of_antennas_allweek_day, entropy_of_antennas_weekday_night, entropy_of_antennas_weekend_allday, entropy_of_contacts_weekday_allday_call, entropy_of_contacts_weekday_day_call, entropy_of_contacts_weekend_day_call, entropy_of_contacts_weekend_day_text, frequent_antennas_allweek_night, frequent_antennas_weekday_day, interactions_per_contact_allweek_allday_call_kurtosis, interactions_per_contact_allweek_allday_call_skewness, interactions_per_contact_allweek_day_text_max, interactions_per_contact_allweek_day_text_mean, interactions_per_contact_allweek_day_text_median, interactions_per_contact_allweek_day_text_std, interactions_per_contact_allweek_night_call_median, interactions_per_contact_allweek_night_call_min, interactions_per_contact_weekday_allday_text_max, interactions_per_contact_weekday_allday_text_min, interactions_per_contact_weekday_allday_text_std, interactions_per_contact_weekday_day_call_median, interactions_per_contact_weekday_day_call_min, interactions_per_contact_weekend_day_call_median, interactions_per_contact_weekend_day_call_min, interevent_time_allweek_allday_text_kurtosis, interevent_time_allweek_allday_text_skewness, interevent_time_allweek_night_text_max, interevent_time_allweek_night_text_mean, interevent_time_allweek_night_text_std, interevent_time_weekday_allday_call_max, interevent_time_weekday_allday_call_mean, interevent_time_weekday_allday_call_std, interevent_time_weekday_allday_text_mean, interevent_time_weekday_day_call_kurtosis, interevent_time_weekday_day_call_skewness, interevent_time_weekday_day_text_std, interevent_time_weekend_day_call_kurtosis, interevent_time_weekend_day_call_skewness, number_of_antennas_allweek_night, number_of_antennas_weekday_night, number_of_antennas_weekend_allday, number_of_contacts_weekday_allday_call, number_of_contacts_weekday_day_call, number_of_contacts_weekend_day_call, number_of_contacts_weekend_day_text, number_of_interactions_in_allweek_allday_call, number_of_interactions_in_weekday_day_text, number_of_interactions_in_weekend_allday_text, number_of_interactions_out_allweek_allday_text, number_of_interactions_out_weekday_day_text, number_of_interactions_out_weekend_allday_text, percent_at_home_weekend_night, percent_pareto_durations_weekday_allday, percent_pareto_interactions_allweek_day_call, percent_pareto_interactions_allweek_day_text, radius_of_gyration_allweek_day, radius_of_gyration_weekday_night, radius_of_gyration_weekend_allday, response_delay_text_allweek_allday_kurtosis, response_delay_text_allweek_night_min, response_delay_text_allweek_night_std, response_delay_text_weekday_allday_kurtosis, response_delay_text_weekday_allday_skewness, response_delay_text_weekday_night_median, response_delay_text_weekday_night_min, response_delay_text_weekend_allday_median, response_delay_text_weekend_day_min, response_delay_text_weekend_day_std, response_rate_text_allweek_night, response_rate_text_weekend_night, balance_of_contacts_allweek_allday_text_kurtosis, balance_of_contacts_allweek_allday_text_skewness, balance_of_contacts_allweek_night_text_max, balance_of_contacts_allweek_night_text_mean, balance_of_contacts_allweek_night_text_std, balance_of_contacts_weekday_allday_call_max, balance_of_contacts_weekday_allday_call_mean, balance_of_contacts_weekday_allday_call_std, balance_of_contacts_weekday_day_text_max, balance_of_contacts_weekday_day_text_mean, balance_of_contacts_weekday_day_text_min, balance_of_contacts_weekday_night_call_max, balance_of_contacts_weekday_night_call_mean, balance_of_contacts_weekday_night_call_std, balance_of_contacts_weekend_allday_call_max, balance_of_contacts_weekend_allday_call_mean, balance_of_contacts_weekend_allday_call_std, balance_of_contacts_weekend_allday_text_max, balance_of_contacts_weekend_allday_text_min, balance_of_contacts_weekend_allday_text_std, call_duration_weekday_night_call_kurtosis, call_duration_weekday_night_call_skewness, call_duration_weekend_allday_call_kurtosis, call_duration_weekend_allday_call_skewness, call_duration_weekend_night_call_median, call_duration_weekend_night_call_min, entropy_of_antennas_allweek_night, entropy_of_antennas_weekday_day, entropy_of_contacts_weekend_night_text, frequent_antennas_weekend_night, interactions_per_contact_allweek_day_text_kurtosis, interactions_per_contact_allweek_day_text_min, interactions_per_contact_allweek_day_text_skewness, interactions_per_contact_allweek_night_call_kurtosis, interactions_per_contact_allweek_night_call_skewness, interactions_per_contact_weekday_allday_text_mean, interactions_per_contact_weekday_day_call_kurtosis, interactions_per_contact_weekday_day_call_skewness, interactions_per_contact_weekday_day_text_std, interactions_per_contact_weekend_day_call_kurtosis, interactions_per_contact_weekend_day_call_skewness, interevent_time_allweek_night_text_median, interevent_time_allweek_night_text_min, interevent_time_weekday_allday_call_median, interevent_time_weekday_allday_call_min, interevent_time_weekday_day_text_max, interevent_time_weekday_day_text_mean, interevent_time_weekday_day_text_min, interevent_time_weekday_night_call_max, interevent_time_weekday_night_call_mean, interevent_time_weekday_night_call_std, interevent_time_weekend_allday_call_max, interevent_time_weekend_allday_call_mean, interevent_time_weekend_allday_call_std, interevent_time_weekend_allday_text_max, interevent_time_weekend_allday_text_min, interevent_time_weekend_allday_text_std, number_of_antennas_weekday_day, number_of_contacts_weekend_night_text, number_of_interactions_alldir_allweek_day_call, number_of_interactions_alldir_allweek_day_text, number_of_interactions_alldir_weekday_day_text, number_of_interactions_alldir_weekend_allday_text, number_of_interactions_in_allweek_night_call, number_of_interactions_in_allweek_night_text, number_of_interactions_in_weekday_night_text, number_of_interactions_out_allweek_allday_call, number_of_interactions_out_weekday_night_text, percent_at_home_weekend_day, percent_pareto_durations_allweek_allday, percent_pareto_interactions_allweek_allday_text, percent_pareto_interactions_weekday_day_text, percent_pareto_interactions_weekend_allday_text, radius_of_gyration_allweek_night, radius_of_gyration_weekday_day, response_delay_text_allweek_night_kurtosis, response_delay_text_weekday_night_kurtosis, response_delay_text_weekday_night_skewness, response_delay_text_weekend_day_kurtosis, response_delay_text_weekend_night_max, response_delay_text_weekend_night_mean, response_delay_text_weekend_night_std, response_rate_text_weekend_day, balance_of_contacts_allweek_night_text_median, balance_of_contacts_allweek_night_text_min, balance_of_contacts_weekday_allday_call_median, balance_of_contacts_weekday_allday_call_min, balance_of_contacts_weekday_allday_text_median, balance_of_contacts_weekday_day_text_median, balance_of_contacts_weekday_night_call_median, balance_of_contacts_weekday_night_call_min, balance_of_contacts_weekday_night_text_max, balance_of_contacts_weekday_night_text_min, balance_of_contacts_weekday_night_text_std, balance_of_contacts_weekend_allday_call_median, balance_of_contacts_weekend_allday_call_min, balance_of_contacts_weekend_allday_text_mean, balance_of_contacts_weekend_day_text_max, balance_of_contacts_weekend_day_text_mean, balance_of_contacts_weekend_day_text_median, balance_of_contacts_weekend_day_text_std, balance_of_contacts_weekend_night_call_max, balance_of_contacts_weekend_night_call_mean, balance_of_contacts_weekend_night_call_std, call_duration_weekend_night_call_kurtosis, call_duration_weekend_night_call_skewness, entropy_of_antennas_weekend_night, entropy_of_contacts_weekend_allday_call, frequent_antennas_weekend_day, interactions_per_contact_allweek_allday_text_max, interactions_per_contact_allweek_allday_text_mean, interactions_per_contact_allweek_allday_text_median, interactions_per_contact_allweek_allday_text_min, interactions_per_contact_allweek_allday_text_std, interactions_per_contact_weekday_allday_call_max, interactions_per_contact_weekday_allday_call_mean, interactions_per_contact_weekday_allday_call_std, interactions_per_contact_weekday_day_text_max, interactions_per_contact_weekday_day_text_mean, interactions_per_contact_weekday_day_text_min, interactions_per_contact_weekday_night_call_max, interactions_per_contact_weekday_night_call_mean, interactions_per_contact_weekday_night_call_std, interactions_per_contact_weekend_allday_call_max, interactions_per_contact_weekend_allday_call_mean, interactions_per_contact_weekend_allday_call_std, interactions_per_contact_weekend_allday_text_max, interactions_per_contact_weekend_allday_text_min, interactions_per_contact_weekend_allday_text_std, interevent_time_allweek_night_text_kurtosis, interevent_time_allweek_night_text_skewness, interevent_time_weekday_allday_call_kurtosis, interevent_time_weekday_allday_call_skewness, interevent_time_weekday_allday_text_median, interevent_time_weekday_day_text_median, interevent_time_weekday_night_call_median, interevent_time_weekday_night_call_min, interevent_time_weekday_night_text_max, interevent_time_weekday_night_text_min, interevent_time_weekday_night_text_std, interevent_time_weekend_allday_call_median, interevent_time_weekend_allday_call_min, interevent_time_weekend_allday_text_mean, interevent_time_weekend_day_text_max, interevent_time_weekend_day_text_mean, interevent_time_weekend_day_text_median, interevent_time_weekend_day_text_std, interevent_time_weekend_night_call_max, interevent_time_weekend_night_call_mean, interevent_time_weekend_night_call_std, number_of_antennas_weekend_night, number_of_contacts_weekend_allday_call, number_of_interactions_alldir_allweek_allday_text, number_of_interactions_alldir_weekday_night_text, number_of_interactions_in_weekday_allday_call, number_of_interactions_in_weekday_day_call, number_of_interactions_in_weekend_day_call, number_of_interactions_in_weekend_day_text, number_of_interactions_out_allweek_night_call, number_of_interactions_out_allweek_night_text, number_of_interactions_out_weekday_allday_call, number_of_interactions_out_weekday_day_call, number_of_interactions_out_weekend_day_call, number_of_interactions_out_weekend_day_text, percent_pareto_durations_allweek_day, percent_pareto_durations_weekday_night, percent_pareto_durations_weekend_allday, percent_pareto_interactions_allweek_allday_call, percent_pareto_interactions_weekday_night_text, radius_of_gyration_weekend_night, response_delay_text_weekend_allday_kurtosis, response_delay_text_weekend_allday_skewness, response_delay_text_weekend_night_median, response_delay_text_weekend_night_min, response_delay_text_weekend_night_skewness, balance_of_contacts_allweek_night_text_kurtosis, balance_of_contacts_allweek_night_text_skewness, balance_of_contacts_weekday_allday_call_kurtosis, balance_of_contacts_weekday_allday_call_skewness, balance_of_contacts_weekday_day_text_kurtosis, balance_of_contacts_weekday_day_text_skewness, balance_of_contacts_weekday_night_call_kurtosis, balance_of_contacts_weekday_night_call_skewness, balance_of_contacts_weekday_night_text_mean, balance_of_contacts_weekend_allday_call_kurtosis, balance_of_contacts_weekend_allday_call_skewness, balance_of_contacts_weekend_day_text_kurtosis, balance_of_contacts_weekend_day_text_min, balance_of_contacts_weekend_day_text_skewness, balance_of_contacts_weekend_night_call_median, balance_of_contacts_weekend_night_call_min, entropy_of_antennas_weekend_day, entropy_of_contacts_weekday_night_call, interactions_per_contact_allweek_allday_text_kurtosis, interactions_per_contact_allweek_allday_text_skewness, interactions_per_contact_allweek_night_text_max, interactions_per_contact_allweek_night_text_mean, interactions_per_contact_allweek_night_text_std, interactions_per_contact_weekday_allday_call_median, interactions_per_contact_weekday_allday_call_min, interactions_per_contact_weekday_allday_text_median, interactions_per_contact_weekday_day_text_median, interactions_per_contact_weekday_night_call_median, interactions_per_contact_weekday_night_call_min, interactions_per_contact_weekday_night_text_max, interactions_per_contact_weekday_night_text_min, interactions_per_contact_weekday_night_text_std, interactions_per_contact_weekend_allday_call_median, interactions_per_contact_weekend_allday_call_min, interactions_per_contact_weekend_allday_text_mean, interactions_per_contact_weekend_day_text_max, interactions_per_contact_weekend_day_text_mean, interactions_per_contact_weekend_day_text_median, interactions_per_contact_weekend_day_text_std, interactions_per_contact_weekend_night_call_max, interactions_per_contact_weekend_night_call_mean, interactions_per_contact_weekend_night_call_std, interevent_time_weekday_day_text_kurtosis, interevent_time_weekday_day_text_skewness, interevent_time_weekday_night_call_kurtosis, interevent_time_weekday_night_call_skewness, interevent_time_weekday_night_text_mean, interevent_time_weekend_allday_call_kurtosis, interevent_time_weekend_allday_call_skewness, interevent_time_weekend_day_text_kurtosis, interevent_time_weekend_day_text_min, interevent_time_weekend_day_text_skewness, interevent_time_weekend_night_call_median, interevent_time_weekend_night_call_min, number_of_antennas_weekend_day, number_of_contacts_weekday_night_call, number_of_interactions_alldir_allweek_allday_call, number_of_interactions_alldir_weekday_allday_call, number_of_interactions_alldir_weekday_day_call, number_of_interactions_alldir_weekend_day_call, number_of_interactions_alldir_weekend_day_text, number_of_interactions_in_weekend_night_text, number_of_interactions_out_weekend_night_text, percent_pareto_durations_allweek_night, percent_pareto_durations_weekday_day, percent_pareto_interactions_allweek_night_call, percent_pareto_interactions_allweek_night_text, percent_pareto_interactions_weekday_allday_call, percent_pareto_interactions_weekday_day_call, percent_pareto_interactions_weekend_day_call, percent_pareto_interactions_weekend_day_text, radius_of_gyration_weekend_day, response_delay_text_weekend_night_kurtosis, balance_of_contacts_weekday_allday_text_kurtosis, balance_of_contacts_weekday_allday_text_skewness, balance_of_contacts_weekend_allday_text_median, balance_of_contacts_weekend_night_call_kurtosis, balance_of_contacts_weekend_night_call_skewness, balance_of_contacts_weekend_night_text_max, balance_of_contacts_weekend_night_text_min, balance_of_contacts_weekend_night_text_std, entropy_of_contacts_weekend_night_call, interactions_per_contact_allweek_night_text_median, interactions_per_contact_allweek_night_text_min, interactions_per_contact_weekday_allday_call_kurtosis, interactions_per_contact_weekday_allday_call_skewness, interactions_per_contact_weekday_day_text_kurtosis, interactions_per_contact_weekday_day_text_skewness, interactions_per_contact_weekday_night_call_kurtosis, interactions_per_contact_weekday_night_call_skewness, interactions_per_contact_weekday_night_text_mean, interactions_per_contact_weekend_allday_call_kurtosis, interactions_per_contact_weekend_allday_call_skewness, interactions_per_contact_weekend_day_text_kurtosis, interactions_per_contact_weekend_day_text_min, interactions_per_contact_weekend_day_text_skewness, interactions_per_contact_weekend_night_call_median, interactions_per_contact_weekend_night_call_min, interevent_time_weekday_allday_text_kurtosis, interevent_time_weekday_allday_text_skewness, interevent_time_weekend_allday_text_median, interevent_time_weekend_night_call_kurtosis, interevent_time_weekend_night_call_skewness, interevent_time_weekend_night_text_max, interevent_time_weekend_night_text_min, interevent_time_weekend_night_text_std, number_of_contacts_weekend_night_call, number_of_interactions_alldir_allweek_night_call, number_of_interactions_alldir_allweek_night_text, number_of_interactions_alldir_weekend_night_text, number_of_interactions_in_weekend_allday_call, number_of_interactions_out_weekend_allday_call, percent_initiated_conversations_allweek_day, percent_initiated_conversations_weekend_day, percent_initiated_interactions_allweek_day, percent_initiated_interactions_weekday_allday, percent_initiated_interactions_weekend_day, percent_pareto_durations_weekend_night, percent_pareto_interactions_weekend_night_text, balance_of_contacts_weekday_night_text_median, balance_of_contacts_weekend_night_text_mean, interactions_per_contact_allweek_night_text_kurtosis, interactions_per_contact_allweek_night_text_skewness, interactions_per_contact_weekday_allday_text_kurtosis, interactions_per_contact_weekday_allday_text_skewness, interactions_per_contact_weekend_allday_text_median, interactions_per_contact_weekend_night_call_kurtosis, interactions_per_contact_weekend_night_call_skewness, interactions_per_contact_weekend_night_text_max, interactions_per_contact_weekend_night_text_min, interactions_per_contact_weekend_night_text_std, interevent_time_weekday_night_text_median, interevent_time_weekend_night_text_mean, number_of_interactions_alldir_weekend_allday_call, number_of_interactions_in_weekday_night_call, number_of_interactions_out_weekday_night_call, percent_initiated_conversations_allweek_night, percent_initiated_conversations_weekday_allday, percent_initiated_conversations_weekend_night, percent_initiated_interactions_allweek_night, percent_initiated_interactions_weekend_night, percent_pareto_durations_weekend_day, percent_pareto_interactions_weekend_allday_call, balance_of_contacts_weekend_allday_text_kurtosis, balance_of_contacts_weekend_allday_text_skewness, interactions_per_contact_weekday_night_text_median, interactions_per_contact_weekend_night_text_mean, interevent_time_weekend_allday_text_kurtosis, interevent_time_weekend_allday_text_skewness, number_of_interactions_alldir_weekday_night_call, number_of_interactions_in_weekend_night_call, number_of_interactions_out_weekend_night_call, percent_initiated_conversations_weekday_day, percent_initiated_conversations_weekday_night, percent_initiated_interactions_allweek_allday, percent_initiated_interactions_weekday_day, percent_initiated_interactions_weekday_night, percent_initiated_interactions_weekend_allday, percent_pareto_interactions_weekday_night_call, balance_of_contacts_weekday_night_text_kurtosis, balance_of_contacts_weekday_night_text_skewness, balance_of_contacts_weekend_night_text_median, interactions_per_contact_weekend_allday_text_kurtosis, interactions_per_contact_weekend_allday_text_skewness, interevent_time_weekday_night_text_kurtosis, interevent_time_weekday_night_text_skewness, interevent_time_weekend_night_text_median, number_of_interactions_alldir_weekend_night_call, percent_initiated_conversations_allweek_allday, percent_initiated_conversations_weekend_allday, percent_pareto_interactions_weekend_night_call, balance_of_contacts_weekend_night_text_kurtosis, balance_of_contacts_weekend_night_text_skewness, interactions_per_contact_weekday_night_text_kurtosis, interactions_per_contact_weekday_night_text_skewness, interactions_per_contact_weekend_night_text_median, interevent_time_weekend_night_text_kurtosis, interevent_time_weekend_night_text_skewness, interactions_per_contact_weekend_night_text_kurtosis, interactions_per_contact_weekend_night_text_skewness, name];
+<span class="s1">&#39;Project [name#510300, &#39;</span><span class="n">cdr_active_days__allweek__day__callandtext</span><span class="p">]</span>
+<span class="o">+-</span> <span class="n">Project</span> <span class="p">[</span><span class="n">name</span><span class="c1">#510300, active_days_allweek_allday#510301, active_days_allweek_day#510302, active_days_allweek_night#510303, active_days_weekday_allday#510304, active_days_weekday_day#510305, active_days_weekday_night#510306, active_days_weekend_allday#510307, active_days_weekend_day#510308, active_days_weekend_night#510309, number_of_contacts_allweek_allday_call#510310, number_of_contacts_allweek_allday_text#510311, number_of_contacts_allweek_day_call#510312, number_of_contacts_allweek_day_text#510313, number_of_contacts_allweek_night_call#510314, number_of_contacts_allweek_night_text#510315, number_of_contacts_weekday_allday_call#510316, number_of_contacts_weekday_allday_text#510317, number_of_contacts_weekday_day_call#510318, number_of_contacts_weekday_day_text#510319, number_of_contacts_weekday_night_call#510320, number_of_contacts_weekday_night_text#510321, number_of_contacts_weekend_allday_call#510322, number_of_contacts_weekend_allday_text#510323, ... 685 more fields]</span>
+   <span class="o">+-</span> <span class="n">Join</span> <span class="n">Inner</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="c1">#510300 = name#566678)</span>
+      <span class="p">:</span><span class="o">-</span> <span class="n">Relation</span> <span class="p">[</span><span class="n">name</span><span class="c1">#510300,active_days_allweek_allday#510301,active_days_allweek_day#510302,active_days_allweek_night#510303,active_days_weekday_allday#510304,active_days_weekday_day#510305,active_days_weekday_night#510306,active_days_weekend_allday#510307,active_days_weekend_day#510308,active_days_weekend_night#510309,number_of_contacts_allweek_allday_call#510310,number_of_contacts_allweek_allday_text#510311,number_of_contacts_allweek_day_call#510312,number_of_contacts_allweek_day_text#510313,number_of_contacts_allweek_night_call#510314,number_of_contacts_allweek_night_text#510315,number_of_contacts_weekday_allday_call#510316,number_of_contacts_weekday_allday_text#510317,number_of_contacts_weekday_day_call#510318,number_of_contacts_weekday_day_text#510319,number_of_contacts_weekday_night_call#510320,number_of_contacts_weekday_night_text#510321,number_of_contacts_weekend_allday_call#510322,number_of_contacts_weekend_allday_text#510323,... 685 more fields] csv</span>
+      <span class="o">+-</span> <span class="n">Project</span> <span class="p">[</span><span class="n">name</span><span class="c1">#566678]</span>
+         <span class="o">+-</span> <span class="n">Relation</span> <span class="p">[</span><span class="n">name</span><span class="c1">#566678,active_days_allweek_allday#566679,active_days_allweek_day#566680,active_days_allweek_night#566681,active_days_weekday_allday#566682,active_days_weekday_day#566683,active_days_weekday_night#566684,active_days_weekend_allday#566685,active_days_weekend_day#566686,active_days_weekend_night#566687,number_of_contacts_allweek_allday_call#566688,number_of_contacts_allweek_allday_text#566689,number_of_contacts_allweek_day_call#566690,number_of_contacts_allweek_day_text#566691,number_of_contacts_allweek_night_call#566692,number_of_contacts_allweek_night_text#566693,number_of_contacts_weekday_allday_call#566694,number_of_contacts_weekday_allday_text#566695,number_of_contacts_weekday_day_call#566696,number_of_contacts_weekday_day_text#566697,number_of_contacts_weekday_night_call#566698,number_of_contacts_weekday_night_text#566699,number_of_contacts_weekend_allday_call#566700,number_of_contacts_weekend_allday_text#566701,... 685 more fields] csv</span>
+</pre></div>
+</div>
+<img alt="../_images/documentation_featurizer_15_10.png" src="../_images/documentation_featurizer_15_10.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda_cider"
+        },
+        kernelOptions: {
+            kernelName: "conda_cider",
+            path: "./quickstart"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda_cider'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="poverty_survey.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Poverty Outcome Generation from Survey Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="documentation_ml.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine Learning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By UC Berkeley Global Policy Lab<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
