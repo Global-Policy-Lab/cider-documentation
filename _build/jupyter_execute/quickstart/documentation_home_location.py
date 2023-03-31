@@ -6,8 +6,8 @@
 # In[1]:
 
 
-from datastore import DataStore
-from home_location import HomeLocator
+from cider.datastore import DataStore
+from cider.home_location import HomeLocator
 
 
 # Load some CDR data, antennas data, and (optionally) spatial files, whose paths have been defined in `config.yml`. Define the geographic granularity for inference (options are ‘antenna_id’, ‘tower_id’ if a tower_id is provided in the antennas files, or any of the spatial files). Optionally load wealth prediction data to construct a poverty map and ground truth location data to evaluate accuracy.
@@ -15,7 +15,11 @@ from home_location import HomeLocator
 # In[3]:
 
 
-datastore = DataStore(cfg_dir='./configs/config.yml')
+# This path should point to your cider installation, where configs and data for this demo are located.
+from pathlib import Path
+cider_installation_directory = Path('../../cider')
+
+datastore = DataStore(config_file_path_string= cider_installation_directory / 'configs' / 'config_quickstart.yml')
 home_locator = HomeLocator(datastore=datastore, clean_folders=True)
 
 

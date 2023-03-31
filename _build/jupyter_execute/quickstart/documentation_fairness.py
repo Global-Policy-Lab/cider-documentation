@@ -6,8 +6,8 @@
 # In[1]:
 
 
-from datastore import DataStore
-from fairness import Fairness
+from cider.datastore import DataStore
+from cider.fairness import Fairness
 
 
 # Set up the configuration file and load some fairness simulation data, using the datastore.
@@ -15,7 +15,11 @@ from fairness import Fairness
 # In[2]:
 
 
-datastore = DataStore(cfg_dir='./configs/config.yml')
+# This path should point to your cider installation, where configs and data for this demo are located.
+from pathlib import Path
+cider_installation_directory = Path('../../cider')
+
+datastore = DataStore(config_file_path_string= cider_installation_directory / 'configs' / 'config_quickstart.yml')
 fairness = Fairness(datastore=datastore)
 
 

@@ -3,11 +3,11 @@
 
 # # Machine Learning
 
-# In[1]:
+# In[ ]:
 
 
-from datastore import DataStore
-from ml import Learner
+from cider.datastore import DataStore
+from cider.ml import Learner
 
 
 # Initialize data store object, then learner, automatically loading feature file produced by featurizer, along with file of data labels, and merging features to labels.
@@ -15,7 +15,11 @@ from ml import Learner
 # In[3]:
 
 
-datastore = DataStore(cfg_dir='./configs/config.yml')
+# This path should point to your cider installation, where configs and data for this demo are located.
+from pathlib import Path
+cider_installation_directory = Path('../../cider')
+
+datastore = DataStore(config_file_path_string= cider_installation_directory / 'configs' / 'config_quickstart.yml')
 learner = Learner(datastore=datastore, clean_folders=True)
 
 

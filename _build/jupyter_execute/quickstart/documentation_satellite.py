@@ -6,8 +6,8 @@
 # In[1]:
 
 
-from datastore import DataStore
-from satellite import Satellite
+from cider.datastore import DataStore
+from cider.satellite import Satellite
 
 
 # We first load some datasets - whose paths have been specified in the config file - using the datastore. The satellite module will by default try to load antenna/tower coordinates, shapefiles defining (administrative) boundaries, the Relative Wealth Index for the country of interest, and population density raster data.
@@ -15,7 +15,11 @@ from satellite import Satellite
 # In[3]:
 
 
-datastore = DataStore(cfg_dir='../../cider/configs/config.yml')
+# This path should point to your cider installation, where configs and data for this demo are located.
+from pathlib import Path
+cider_installation_directory = Path('../../cider')
+
+datastore = DataStore(config_file_path_string= cider_installation_directory / 'configs' / 'config_quickstart.yml')
 satellite = Satellite(datastore=datastore)
 
 
