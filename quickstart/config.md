@@ -1,7 +1,7 @@
 
 # Configuration file
 
-The configuration file - example at `configs/config.yml` - is used to store all relevant configurations, like paths to the datasets and spark parameters. It should be appropriately edited before executing the code. It is written in [YAML](https://yaml.org/).<br>
+The configuration file is used to store all relevant configurations, like paths to the datasets and spark parameters. It should be appropriately edited before executing the code. It is written in [YAML](https://yaml.org/).
 
 ## Spark parameters
 Spark parameters are set under the `spark` heading. Syntax for specifying Spark parameters derives from [Spark\'s own property names](https://spark.apache.org/docs/latest/configuration.html#available-properties). For example, to conigure the parameter `spark.app.name` in Cider config, we'd use
@@ -40,7 +40,7 @@ Under the `path` heading, we specify folder and file locations. File subpaths ar
 ```
 path:
   input_data: 
-    directory_path: "/Users/example/Documents/GD/cider/synthetic_data/"
+    directory_path: "/example/path/to/input/data/"
     file_paths:
       antennas: "antennas.csv"
       cdr: "cdr.csv"
@@ -51,14 +51,14 @@ path:
       population: "population_tgo_2019-07-01.tif"
       poverty_scores: null
       recharges: "recharges.csv"
-      rwi: "TGO_relative_wealth_index.csv"
+      rwi: "relative_wealth_index.csv"
       shapefiles:
         regions: "regions.geojson"
         cantons: "cantons.geojson"
         prefectures: "prefectures.geojson"
       user_consent: null
   working: 
-    directory_path: "/Users/example/Documents/GD/cider/working_directory/"
+    directory_path: "/example/path/to/working/directory"
 ```
 
 ## Column names
@@ -104,10 +104,9 @@ col_names:
 
 ## Miscellaneous parameters
 
-We also have to set a few parameters that will affect the behaviour of some modules, under the `params` heading:
+Under the `params` heading we are able to specify certain miscellaneous parameters that affect Cider behavior:
 
 ```
-params:
   cdr:
     weekend: [1, 7] // definition of weekend (Sun = 1 to Sat = 7)
     start_of_day: 7 // hour when day starts (used to define day/night)

@@ -1,8 +1,8 @@
 # Poverty Outcome Generation from Survey Data
-Set up the configuration file and load some survey data (see {doc}`standardized data formats <../data_formats/survey_data>`) for file schema).
+Set up the configuration file and load some survey data (see {doc}`standardized data formats <../data_formats/survey_data>` for file schema).
 
 ```
-datastore = DataStore('/path/to/config/file')
+datastore = DataStore('/path/to/config_file.yml')
 outcomes_generator = SurveyOutcomesGenerator(datastore=datastore, clean_folders=True)
 ```
 

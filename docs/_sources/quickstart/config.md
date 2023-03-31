@@ -1,27 +1,46 @@
 
 # Configuration file
 
-The configuration file - example at `configs/config.yml` - is used to store all relevant configurations, like paths to the datasets and spark parameters. It should be appropriately edited before executing the code. <br>
+The configuration file is used to store all relevant configurations, like paths to the datasets and spark parameters. It should be appropriately edited before executing the code. It is written in [YAML](https://yaml.org/).
 
-The first parameters to set are those related to spark:
+## Spark parameters
+Spark parameters are set under the `spark` heading. Syntax for specifying Spark parameters derives from [Spark\'s own property names](https://spark.apache.org/docs/latest/configuration.html#available-properties). For example, to conigure the parameter `spark.app.name` in Cider config, we'd use
+```
+spark:
+  app:
+    name: "my_first_cider_app"
+```
+
+Here is a more complete example config. It's not meant as an endorsement of these specific config values; optimal choices vary greatly based on your environment and use case. 
 
 ```
-spark: 
-  app_name: "mm" 
-  files:
-    max_partition_bytes: 67108864
+spark:
+  app:
+    name: "my_first_cider_app"
+  master: "local[*]"
+  sql:
+    shuffle:
+      partitions: 144
   driver:
-    memory: "8g" // driver memory
-    max_result_size: "2g" // maximum result size when collecting to driver
-  loglevel: "ERROR"
+    memory: "8G"
+    maxResultSize: "2G"
+    supervise: true
+  executor:
+    memory: "8G"
+  rpc:
+    askTimeout: "600s"
+  loglevel: "WARN"
+  logConf: true
 ```
 
-Next we specify folder and file locations. File subpaths are given relative to a "parent" directory: Either the `input_data` directory or the `working` directory (file subpaths should not have leading slashes). The locations of the parent directories must be specified with absolute paths (with leading slashes). Cider will not modify files under the `input_data` directory. It will use the `working` directory for program outputs, some of which may act as inputs for later steps. For example, the featurizer writes features to the `working` directory, and then the ml module reads features back in from that directory. At present, file names/sub-paths written programmatically under the `working` directory are hard-coded and can't be specified in config.
+## File and folder locations
+
+Under the `path` heading, we specify folder and file locations. File subpaths are given relative to a "parent" directory: Either the `input_data` directory or the `working` directory (if you'd rather specify an absolute path, use a leading slash). The locations of the parent directories must be specified with absolute paths (with leading slashes). Cider will not modify files under the `input_data` directory. It will use the `working` directory for program outputs, some of which may act as inputs for later steps. For example, the featurizer writes features to the `working` directory, and then the ml module reads features back in (from that same directory, unless a different one is specified as input). At present, file names/sub-paths written programmatically under the `working` directory are hard-coded and can't be specified in config.
 
 ```
 path:
   input_data: 
-    directory_path: "/Users/example/Documents/GD/cider/synthetic_data/"
+    directory_path: "/example/path/to/input/data/"
     file_paths:
       antennas: "antennas.csv"
       cdr: "cdr.csv"
@@ -32,17 +51,19 @@ path:
       population: "population_tgo_2019-07-01.tif"
       poverty_scores: null
       recharges: "recharges.csv"
-      rwi: "TGO_relative_wealth_index.csv"
+      rwi: "relative_wealth_index.csv"
       shapefiles:
         regions: "regions.geojson"
         cantons: "cantons.geojson"
         prefectures: "prefectures.geojson"
       user_consent: null
   working: 
-    directory_path: "/Users/example/Documents/GD/cider/working_directory/"
+    directory_path: "/example/path/to/working/directory"
 ```
 
-The featurizer module expects certain column and column names, and we can define them in the following section of the config file:
+## Column names
+
+Cider expects certain columns to be present, and we can specify their names under the `col_names` heading (this is not a complete list):
 
 ```
 col_names:
@@ -81,10 +102,11 @@ col_names:
   geo: "tower_id"
 ```
 
-We also have to set a few parameters that will affect the behaviour of some modules:
+## Miscellaneous parameters
+
+Under the `params` heading we are able to specify certain miscellaneous parameters that affect Cider behavior:
 
 ```
-params:
   cdr:
     weekend: [1, 7] // definition of weekend (Sun = 1 to Sat = 7)
     start_of_day: 7 // hour when day starts (used to define day/night)
@@ -104,7 +126,9 @@ params:
   opt_in_default: false // if true opt-in is set as default, i.e. all users give their consent unless they opt-out
 ```
 
-Finally, we can set the hyper-parameters that will be tested during a grid-search performed by the ML module:
+## ML tuning parameters
+
+Under the `hyperparams` heading, we set the hyper-parameters that will be tested during a grid-search performed by the ML module:
 
 ```
 hyperparams:
