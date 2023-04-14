@@ -19,6 +19,43 @@ Another option is to install dependencies using Pip:
 
 You'll likely want to add this line to your .bashrc, .zshrc, or similar.
 
+### On AWS
+The following process should reliably get Cider up and running on a new AWS EC2 Ubuntu instance: 
+1. Create AWS EC2 Ubuntu instance. This process should work on any Ubuntu machine, but it has been verified on the current default EC2 Ubuntu AMI (ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230325), 64-bit x86, t2.large with 8gb memory
+1. ssh into the Ubuntu machine. Substitute the path to your key and the AWS Public IPv4 DNS address into this line and execute in your terminal: `ssh -i "path/key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
+1. Execute the following, confirming selections along the way
+
+```
+# Clone cider
+git clone https://github.com/Global-Policy-Lab/cider.git
+cd cider
+
+# Install a version of python compatible with cider
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.9
+
+# Add .local/bin, where scripts will be installed, to PATH
+echo 'export PATH="/home/ubuntu/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# Install pip
+sudo apt install python3-pip
+
+# Install distutils to manage module installation
+sudo apt-get install python3.9-distutils
+
+# Install cider's dependencies
+python3.9 -m pip install .
+
+# Install Java
+sudo apt install default-jdk
+
+# Point pyspark to python 3.9
+echo 'export PYSPARK_PYTHON=python3.9; export PYSPARK_DRIVER_PYTHON=python3.9' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ### On Apple M1
 The above may not work on Apple M1 processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use [conda](https://docs.conda.io/en/latest/) to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple's M1 chips use).
 

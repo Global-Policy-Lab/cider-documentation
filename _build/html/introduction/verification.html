@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Recommendations: Output verification</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Research and resources" href="research.html" />
     <link rel="prev" title="Recommendations: Training Data" href="trainingdata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -406,23 +408,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="recommendations-output-verification">
-<h1>Recommendations: Output verification<a class="headerlink" href="#recommendations-output-verification" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="recommendations-output-verification">
+<h1>Recommendations: Output verification<a class="headerlink" href="#recommendations-output-verification" title="Permalink to this heading">#</a></h1>
 <p>Cider users should implement governance structures that achieve standards for data ethics, making sure humanitarian programs are targeting and delivering aid to those in need without infringing human rights.</p>
 <p>Output verifications increase accountability and transparency with recipients and non-recipients, partners, funders, and humanitarian and development communities as a whole. It also creates the necessary governance to minimize bias and discrimination (which is also present in in-person targeting) and maximize fairness on the large-scale use of sensitive data, exponentiating the positive impact of AI. The verification process should combine internal and external audits, such as a research institution or contracted technical auditor. Other resources for setting up output verifications can be found here:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://international-review.icrc.org/articles/ai-humanitarian-action-human-rights-ethics-913">AI for humanitarian action: Human rights and ethics</a> from the ICRC (International Committee of the Red Cross)]</p></li>
 <li><p><a class="reference external" href="https://www.turing.ac.uk/sites/default/files/2019-06/understanding_artificial_intelligence_ethics_and_safety.pdf">Understanding artificial intelligence ethics and safety: A guide for the responsible design and implementation of AI systems in the public sector</a> from the Alan Turing Institute</p></li>
 </ul>
-<div class="section" id="internal-audits">
-<h2>Internal audits<a class="headerlink" href="#internal-audits" title="Permalink to this headline">#</a></h2>
+<section id="internal-audits">
+<h2>Internal audits<a class="headerlink" href="#internal-audits" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Targeting comparisons:</strong> It is critical to compare phone-based targeting to alternative targeting mechanisms in the context of interest to ensure that phone-based targeting is the most appropriate method for the circumstances (see the targeting module). Ideally, CDR-based targeting should be compared to any other method that could be feasibly implemented at scale, and the best targeting method should be selected for the program. However, which counterfactual targeting approaches can be assessed depends on which survey data is collected. Geographic targeting methods are valuable counterfactual targeting methods. Typically, some location data will be available (whether self-reported in the survey, recorded by field enumerators with geographic coordinates, or available in administrative data). If this data is available, compare the CDR-based targeting method to geographic targeting at every feasible geography, at minimum at the admin-2 level but ideally at the admin-3 or admin-4 level. If the ground-truth poverty measure in the survey is consumption or income, collect data to construct a proxy-means test and asset index and compare targeting on these proxy poverty measures. Always also compare to random targeting as a naive baseline.</p></li>
 <li><p><strong>Bias audits:</strong> It is also vital to audit the algorithm for systematic bias for or against specific subgroups. If possible, qualitative or legal work should be conducted to assess which subgroups are vulnerable and should be audited for fairness checks. Qualitative work should consist of interviews or focus groups with program stakeholders, including local government, NGOs, and, most importantly, potential program beneficiaries. Alternatively, fairness classes could be based on the legal context in question, checking fairness for subgroups protected by the law. For example, in the US, race, religion, nationality, sex, age, disability status, and veteran status are all protected classes. The bias audit feature in Cider will present audits for two types of systematic biases: a systematic over- or under-prediction of a subgroup’s poverty, or a systematic over- or under-targeting of a subgroup (known as demographic parity).</p></li>
 </ul>
-</div>
-<div class="section" id="external-audits">
-<h2>External audits<a class="headerlink" href="#external-audits" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="external-audits">
+<h2>External audits<a class="headerlink" href="#external-audits" title="Permalink to this heading">#</a></h2>
 <p>External audits provide the transparency needed to stakeholders by allowing third-party verification of an implementer’s results. Auditors often assess if outputs are fair and impartial and if data protection protocols are in place. In addition to transparency, the third-party audits address concerns about the conflict of interest that might exist in internal audits. AI tools applied to the development and humanitarian sectors should aim to achieve the highest accountability standards, and for that, outputs should be independently audited. Cider’s open source license and internal audit mechanisms aim to provide sufficient information to be auditable by independent parties. It is encouraged that these independent audits be done by organizations with both the technical capacity and experience in the field.</p>
 <p>More resources on third party audits can be found here:</p>
 <ul class="simple">
@@ -438,8 +440,8 @@ document.write(`
 <li><p><a class="reference external" href="https://www.accenture.com/us-en/services/ai-artificial-intelligence-index">Accenture Applied Intelligence</a></p></li>
 <li><p><a class="reference external" href="https://www2.deloitte.com/de/de/pages/risk/solutions/ai-fairness-with-model-guardian.html">Deloitte | Model Guardian</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -467,7 +469,10 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="trainingdata.html"
@@ -487,7 +492,10 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -512,7 +520,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -542,7 +550,7 @@ By UC Berkeley Global Policy Lab
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -551,8 +559,8 @@ By UC Berkeley Global Policy Lab
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
