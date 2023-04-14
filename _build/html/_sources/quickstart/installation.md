@@ -19,45 +19,44 @@ Another option is to install dependencies using Pip:
 
 You'll likely want to add this line to your .bashrc, .zshrc, or similar.
 
-### On AWS
-The following process should reliably get Cider up and running on a new AWS EC2 Ubuntu instance: 
+### AWS
+The following process should reliably get Cider up and running in Jupyter notebooks on a new AWS EC2 Ubuntu instance:
 1. Create AWS EC2 Ubuntu instance. This process should work on any Ubuntu machine, but it has been verified on the current default EC2 Ubuntu AMI (ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230325), 64-bit x86, t2.large with 8gb memory
 1. ssh into the Ubuntu machine. Substitute the path to your key and the AWS Public IPv4 DNS address into this line and execute in your terminal: `ssh -i "path/key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
-1. Execute the following, confirming selections along the way
+1. Execute the following, confirming all prompts along the way:
 
 ```
-# Clone cider
+# download and install miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh
+bash Miniconda3-py39_23.1.0-1-Linux-x86_64.sh
+source .bashrc
+
+# Create a conda environment w/ cider-compatible version of python
+conda create --name py39 python=3.9
+conda deactivate
+conda activate py39
+conda install nb_conda_kernels
+
+# Install cider
 git clone https://github.com/Global-Policy-Lab/cider.git
 cd cider
 
-# Install a version of python compatible with cider
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update
-sudo apt-get install python3.9
-
-# Add .local/bin, where scripts will be installed, to PATH
-echo 'export PATH="/home/ubuntu/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-
-# Install pip
-sudo apt install python3-pip
-
-# Install distutils to manage module installation
-sudo apt-get install python3.9-distutils
-
 # Install cider's dependencies
-python3.9 -m pip install .
+pip install .
 
-# Install Java
+## Including Java
+sudo apt-get update
 sudo apt install default-jdk
-
-# Point pyspark to python 3.9
-echo 'export PYSPARK_PYTHON=python3.9; export PYSPARK_DRIVER_PYTHON=python3.9' >> ~/.bashrc
-source ~/.bashrc
 ```
 
-### On Apple M1
-The above may not work on Apple M1 processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use [conda](https://docs.conda.io/en/latest/) to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple's M1 chips use).
+To work in a Jupyter notebook:
+- In your ssh session execute: `jupyter notebook --no-browser --port=8888`
+- Leave the ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: `ssh -i "path/key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
+- Open a browser window and go to `localhost:8000`
+	+ If prompted for a token, go back to the first terminal window and copy the token from the end of one of the long URLs that look something like: http://<!-- -->localhost:8888/?token=9a22e1a45e0c1c3a3e89c8fc18448d25ff956d8908140cd6
+
+### On Apple Silicon (M1, M2, etc.)
+The above may not work on Apple processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use [conda](https://docs.conda.io/en/latest/) to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple's M1 chips use).
 
 [This guide](https://towardsdatascience.com/how-to-manage-conda-environments-on-an-apple-silicon-m1-mac-1e29cb3bad12) contains details on setting up Conda and creating such an environment. Summarized, the steps are as follows:
 
