@@ -54,6 +54,7 @@ To work in a Jupyter notebook:
 - Leave the ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: `ssh -i "path/key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
 - Open a browser window and go to `localhost:8000`
 	+ If prompted for a token, go back to the first terminal window and copy the token from the end of one of the long URLs that look something like: http://<!-- -->localhost:8888/?token=9a22e1a45e0c1c3a3e89c8fc18448d25ff956d8908140cd6
+- In the browser, create a notebook via the "New" menu button and select "Python [conda env:py39]"
 
 ### On Apple Silicon (M1, M2, etc.)
 The above may not work on Apple processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use [conda](https://docs.conda.io/en/latest/) to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple's M1 chips use).
