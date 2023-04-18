@@ -397,7 +397,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-poetry">Using Poetry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pip">Using Pip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aws">AWS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aws">AWS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-work-in-a-jupyter-notebook">To work in a Jupyter notebook</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-apple-silicon-m1-m2-etc">On Apple Silicon (M1, M2, etc.)</a></li>
 </ul>
             </nav>
@@ -458,13 +461,18 @@ document.write(`
 <span class="c1">## Including Java</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">default</span><span class="o">-</span><span class="n">jdk</span>
+
+<span class="c1"># Add Cider to Pythonpath (change the path if you installed cider somewhere other than the home directory)</span>
+<span class="n">echo</span> <span class="s1">&#39;export PYTHONPATH=$PYTHONPATH:~/cider&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
 </pre></div>
 </div>
-<p>To work in a Jupyter notebook:</p>
+<section id="to-work-in-a-jupyter-notebook">
+<h3>To work in a Jupyter notebook<a class="headerlink" href="#to-work-in-a-jupyter-notebook" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>If not in it, activate the conda environment created in script above: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">py39</span></code></p></li>
-<li><p>In your ssh session execute: <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span> <span class="pre">--port=8888</span></code></p></li>
-<li><p>Leave the ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-i</span> <span class="pre">&quot;path/key.pem&quot;</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8888</span> <span class="pre">ubuntu&#64;ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com</span></code></p></li>
+<li><p>Activate the conda environment created in the script above: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">py39</span></code></p></li>
+<li><p>Start jupyter notebooks: <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span> <span class="pre">--port=8888</span></code></p></li>
+<li><p>Leave that ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-i</span> <span class="pre">&quot;path/key.pem&quot;</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8888</span> <span class="pre">ubuntu&#64;ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com</span></code></p></li>
 <li><p>Open a browser window and go to <code class="docutils literal notranslate"><span class="pre">localhost:8000</span></code></p>
 <ul>
 <li><p>If prompted for a token, go back to the first terminal window and copy the token from the end of one of the long URLs that look something like: http://<!-- -->localhost:8888/?token=9a22e1a45e0c1c3a3e89c8fc18448d25ff956d8908140cd6</p></li>
@@ -472,6 +480,7 @@ document.write(`
 </li>
 <li><p>In the browser, create a notebook via the “New” menu button and select “Python [conda env:py39]”</p></li>
 </ul>
+</section>
 </section>
 <section id="on-apple-silicon-m1-m2-etc">
 <h2>On Apple Silicon (M1, M2, etc.)<a class="headerlink" href="#on-apple-silicon-m1-m2-etc" title="Permalink to this heading">#</a></h2>
@@ -562,7 +571,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-poetry">Using Poetry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pip">Using Pip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aws">AWS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aws">AWS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-work-in-a-jupyter-notebook">To work in a Jupyter notebook</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-apple-silicon-m1-m2-etc">On Apple Silicon (M1, M2, etc.)</a></li>
 </ul>
   </nav></div>

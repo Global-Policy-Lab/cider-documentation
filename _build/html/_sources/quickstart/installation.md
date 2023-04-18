@@ -47,12 +47,16 @@ pip install .
 ## Including Java
 sudo apt-get update
 sudo apt install default-jdk
+
+# Add Cider to Pythonpath (change the path if you installed cider somewhere other than the home directory)
+echo 'export PYTHONPATH=$PYTHONPATH:~/cider' >> ~/.bashrc
+source ~/.bashrc
 ```
 
-To work in a Jupyter notebook:
-- If not in it, activate the conda environment created in script above: `conda activate py39`
-- In your ssh session execute: `jupyter notebook --no-browser --port=8888`
-- Leave the ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: `ssh -i "path/key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
+#### To work in a Jupyter notebook
+- Activate the conda environment created in the script above: `conda activate py39`
+- Start jupyter notebooks: `jupyter notebook --no-browser --port=8888`
+- Leave that ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: `ssh -i "path/key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
 - Open a browser window and go to `localhost:8000`
 	+ If prompted for a token, go back to the first terminal window and copy the token from the end of one of the long URLs that look something like: http://<!-- -->localhost:8888/?token=9a22e1a45e0c1c3a3e89c8fc18448d25ff956d8908140cd6
 - In the browser, create a notebook via the "New" menu button and select "Python [conda env:py39]"
