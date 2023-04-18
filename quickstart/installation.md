@@ -50,6 +50,7 @@ sudo apt install default-jdk
 ```
 
 To work in a Jupyter notebook:
+- If not in it, activate the conda environment created in script above: `conda activate py39`
 - In your ssh session execute: `jupyter notebook --no-browser --port=8888`
 - Leave the ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: `ssh -i "path/key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
 - Open a browser window and go to `localhost:8000`
