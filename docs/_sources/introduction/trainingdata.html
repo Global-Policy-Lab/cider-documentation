@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Recommendations: Training Data</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/jquery-3.5.1.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/copybutton_funcs.js"></script>
+    <script src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/underscore-1.12.0.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Open Source Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/goals.html">
+   Goals for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/features.html">
+   Overview of features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/privacy.html">
+   Adherance to data privacy standards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/trainingdata.html">
+   Recommendations: Training Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/verification.html">
+   Recommendations: Output verification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/research.html">
+   Research and resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/opensource.html">
+   Open source management
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Quickstart
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/config.html">
+   Configuration file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/poverty_survey.html">
+   Poverty Outcome Generation from Survey Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/documentation_featurizer.html">
+   Featurizer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/documentation_ml.html">
+   Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/documentation_home_location.html">
+   Home Location Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/documentation_targeting.html">
+   Targeting Evaluations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/documentation_fairness.html">
+   Fairness Evaluations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../quickstart/documentation_satellite.html">
+   Satellite
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Standardized data formats
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/cdr.html">
+   CDR (call and text)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/antennas.html">
+   Antennas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/recharges.html">
+   Recharges
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/mobile_data.html">
+   Mobile Data Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/mobile_money.html">
+   Mobile Money
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/spatial.html">
+   Spatial Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/features.html">
+   Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/poverty_labels.html">
+   Poverty Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/home_locations.html">
+   Home Location Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/survey_data.html">
+   Survey Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data_formats/targeting_data.html">
+   Targeting and Fairness Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API REFERENCE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/datastore.html">
+   Datastore API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/poverty_survey.html">
+   Survey API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/featurizer.html">
+   Featurizer API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/ml.html">
+   ML API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/home_location.html">
+   Home Location API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/targeting.html">
+   Targeting API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/fairness.html">
+   Fairness API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/satellite.html">
+   Satellite API Reference
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Global-Policy-Lab/cider"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2F_sources/introduction/trainingdata.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/_sources/introduction/trainingdata.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Recommendations: Training Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="recommendations-training-data">
+<h1>Recommendations: Training Data<a class="headerlink" href="#recommendations-training-data" title="Permalink to this headline">#</a></h1>
+<p>Collecting robust and representative data is critical to any successful deployment of Cider. Here are several recommendations:</p>
+<ul class="simple">
+<li><p><strong>Number of observations that should be collected in a ground truth poverty survey:</strong> Returns to additional training data for poverty prediction have been documented in past research (Blumenstock et al., 2015). In general, accuracy increases with additional training data, but with diminishing marginal returns to data collection.</p></li>
+<li><p><strong>Survey collection - phone vs. in-person:</strong> While it is generally accepted that field surveys collect higher quality data than phone surveys, the specific structural and economic constraints of each targeting project will dictate whether a phone or in-person survey is more appropriate. It is worth noting that more complex poverty outcomes like income and consumption can typically only be collected in a high quality field survey; phone surveys typically focus on asset indices or other proxies for consumption or income, such as a proxy-means test.</p></li>
+<li><p><strong>Poverty outcomes collection:</strong> When possible, multiple poverty measures should be collected for validation purposes. Past studies using wealth from mobile phone metadata have used a variety of poverty outcomes to train machine learning models, including asset indices, consumption, proxy-means tests (PMTs) and poverty probability indices (PPIs). Consumption is accepted as the gold-standard of poverty in development economics, so consumption should be collected where possible (however, eliciting consumption typically requires a multi-hour consumption module in a field survey). Recent work has shown that well-calibrated PMTs and PPIs are preferable to asset indices, if there is an up-to-date PMT or PPI for the country in question, or if it is possible to custom-calibrate a PMT based on recently-collected consumption data.</p></li>
+<li><p><strong>Number of components in a PMT or asset index:</strong> Past work on wealth prediction and targeting has used indices or PMTs with between 8 and 30 components. Index accuracy typically increases with the number of underlying components, but there are diminishing marginal returns to increasing the number of components after a point. Moreover, the more components collected in a survey the more fatigue or boredom on the part of the respondent, which may decrease survey quality.
+Some contexts have standardized and tested asset indices or PMTs. If there is no such standardized index available, but past survey data from the country in question is available, one option is to use forward selection of features for a PMT (implemented in CIDER’s survey module) and look for an “elbow” in accuracy curves where returns to additional features start to decrease. In choosing the number of features in the PMT, the total survey duration (including, for example, demographic information for bias checks or other poverty measures for validation) should also be considered to prevent respondent fatigue.</p></li>
+<li><p><strong>Timeline and frequency for survey and phone metadata collection (wealth prediction recalibration):</strong> Recent research from <a class="reference external" href="https://www.nber.org/papers/w29070">Aiken et al. (2021)</a> suggests that the quality of phone-based poverty prediction degrades when phone data or survey data are out-of-date. In that application of phone-based targeting in rural Togo, the authors find that targeting accuracy decreases by 4-5% when phone data or survey data are out-of-date, and precision decreases by 10-14%.
+Note that there are three particular concerns when it comes to data collection and model recalibration: (1) Turnover of SIM cards on the mobile phone network, (2) the transitory nature of poverty, and (3) applying a machine learning model calibrated on “old” survey data to contemporary CDR (risking “model drift”).</p></li>
+</ul>
+<ol class="simple">
+<li><p>One concern with using “old” CDR for a contemporary aid program is the turnover of SIMs on the mobile phone network. Suppose the CDR data used for targeting is even six months out of date. In that case, a sizable number of subscribers will be prevented from registering because they are not associated with underlying CDR from which to produce a wealth prediction. For example, in Togo, Aiken et al. (2021) estimate that around 3% of mobile network subscribers leave the network in a given month, so around 18% of subscribers would have switched SIM cards after six months. CDR should be taken from as close to the program start date as possible to maximize program coverage.</p></li>
+<li><p>People move in and out of poverty with some frequency, though the timescale for this movement is typically years. To capture the state of poverty that is contemporary with the program time period, survey data should be gathered as close to the program start date as possible. Initial results suggest that it is not essential that survey data overlap with the time period of CDR, but both should be taken from as close to the program as possible.</p></li>
+<li><p>The two above concerns suggest that it is necessary to “refresh” CDR data frequently and to “refresh” survey data somewhat less frequently. It is worth noting that there is a specific concern with training a model on “old” CDR and survey data and using the model to project onto CDR gathered contemporarily, called “model drift.” Specifically, the relationship between phone behavior and poverty shifts over time: for example, the relationship over the holidays may not be the same as the relationship in other months. To combat this effect, even if survey data is not “refreshed,” the model should be consistently refreshed (that is, retrained).</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Representativity checks of training data:</strong> Bias audits should be grounded in the cultural context in which the program is conducted, either with qualitative interviews with stakeholders (especially potential beneficiaries) or based on existing legal frameworks. If possible, qualitative or legal work should be conducted to assess which subgroups are vulnerable and should be audited for in fairness checks. Qualitative work should consist of interviews or focus groups with program stakeholders, including local government, NGOs, and most importantly potential program beneficiaries. Alternatively, fairness classes could be based on the legal context in question, checking fairness for subgroups that are protected by the law. For example, in the US, race, religion, nationality, sex, age, disability status, and veteran status are all protected classes.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_sources/introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By UC Berkeley Global Policy Lab<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
