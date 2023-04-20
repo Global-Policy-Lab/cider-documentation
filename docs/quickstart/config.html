@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Configuration file</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Poverty Outcome Generation from Survey Data" href="poverty_survey.html" />
     <link rel="prev" title="Installation" href="installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -409,11 +411,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="configuration-file">
-<h1>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="configuration-file">
+<h1>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this heading">#</a></h1>
 <p>The configuration file is used to store all relevant configurations, like paths to the datasets and spark parameters. It should be appropriately edited before executing the code. It is written in <a class="reference external" href="https://yaml.org/">YAML</a>.</p>
-<div class="section" id="spark-parameters">
-<h2>Spark parameters<a class="headerlink" href="#spark-parameters" title="Permalink to this headline">#</a></h2>
+<section id="spark-parameters">
+<h2>Spark parameters<a class="headerlink" href="#spark-parameters" title="Permalink to this heading">#</a></h2>
 <p>Spark parameters are set under the <code class="docutils literal notranslate"><span class="pre">spark</span></code> heading. Syntax for specifying Spark parameters derives from <a class="reference external" href="https://spark.apache.org/docs/latest/configuration.html#available-properties">Spark’s own property names</a>. For example, to conigure the parameter <code class="docutils literal notranslate"><span class="pre">spark.app.name</span></code> in Cider config, we’d use</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spark</span><span class="p">:</span>
   <span class="n">app</span><span class="p">:</span>
@@ -440,9 +442,9 @@ document.write(`
   <span class="n">logConf</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="file-and-folder-locations">
-<h2>File and folder locations<a class="headerlink" href="#file-and-folder-locations" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="file-and-folder-locations">
+<h2>File and folder locations<a class="headerlink" href="#file-and-folder-locations" title="Permalink to this heading">#</a></h2>
 <p>Under the <code class="docutils literal notranslate"><span class="pre">path</span></code> heading, we specify folder and file locations. File subpaths are given relative to a “parent” directory: Either the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> directory or the <code class="docutils literal notranslate"><span class="pre">working</span></code> directory (if you’d rather specify an absolute path, use a leading slash). The locations of the parent directories must be specified with absolute paths (with leading slashes). Cider will not modify files under the <code class="docutils literal notranslate"><span class="pre">input_data</span></code> directory. It will use the <code class="docutils literal notranslate"><span class="pre">working</span></code> directory for program outputs, some of which may act as inputs for later steps. For example, the featurizer writes features to the <code class="docutils literal notranslate"><span class="pre">working</span></code> directory, and then the ml module reads features back in (from that same directory, unless a different one is specified as input). At present, file names/sub-paths written programmatically under the <code class="docutils literal notranslate"><span class="pre">working</span></code> directory are hard-coded and can’t be specified in config.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">:</span>
   <span class="n">input_data</span><span class="p">:</span> 
@@ -467,9 +469,9 @@ document.write(`
     <span class="n">directory_path</span><span class="p">:</span> <span class="s2">&quot;/example/path/to/working/directory&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="column-names">
-<h2>Column names<a class="headerlink" href="#column-names" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="column-names">
+<h2>Column names<a class="headerlink" href="#column-names" title="Permalink to this heading">#</a></h2>
 <p>Cider expects certain columns to be present, and we can specify their names under the <code class="docutils literal notranslate"><span class="pre">col_names</span></code> heading (this is not a complete list):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span><span class="p">:</span>
   <span class="n">cdr</span><span class="p">:</span>
@@ -507,9 +509,9 @@ document.write(`
   <span class="n">geo</span><span class="p">:</span> <span class="s2">&quot;tower_id&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="miscellaneous-parameters">
-<h2>Miscellaneous parameters<a class="headerlink" href="#miscellaneous-parameters" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="miscellaneous-parameters">
+<h2>Miscellaneous parameters<a class="headerlink" href="#miscellaneous-parameters" title="Permalink to this heading">#</a></h2>
 <p>Under the <code class="docutils literal notranslate"><span class="pre">params</span></code> heading we are able to specify certain miscellaneous parameters that affect Cider behavior:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">cdr</span><span class="p">:</span>
     <span class="n">weekend</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="o">//</span> <span class="n">definition</span> <span class="n">of</span> <span class="n">weekend</span> <span class="p">(</span><span class="n">Sun</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">Sat</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
@@ -530,9 +532,9 @@ document.write(`
   <span class="n">opt_in_default</span><span class="p">:</span> <span class="n">false</span> <span class="o">//</span> <span class="k">if</span> <span class="n">true</span> <span class="n">opt</span><span class="o">-</span><span class="ow">in</span> <span class="ow">is</span> <span class="nb">set</span> <span class="k">as</span> <span class="n">default</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="nb">all</span> <span class="n">users</span> <span class="n">give</span> <span class="n">their</span> <span class="n">consent</span> <span class="n">unless</span> <span class="n">they</span> <span class="n">opt</span><span class="o">-</span><span class="n">out</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ml-tuning-parameters">
-<h2>ML tuning parameters<a class="headerlink" href="#ml-tuning-parameters" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="ml-tuning-parameters">
+<h2>ML tuning parameters<a class="headerlink" href="#ml-tuning-parameters" title="Permalink to this heading">#</a></h2>
 <p>Under the <code class="docutils literal notranslate"><span class="pre">hyperparams</span></code> heading, we set the hyper-parameters that will be tested during a grid-search performed by the ML module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hyperparams:
   &quot;linear&quot;:
@@ -565,8 +567,8 @@ document.write(`
     &quot;model__n_estimators&quot;: [ 50, 100, 200 ]
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -594,7 +596,10 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="installation.html"
@@ -614,7 +619,10 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -642,7 +650,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -672,7 +680,7 @@ By UC Berkeley Global Policy Lab
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -681,8 +689,8 @@ By UC Berkeley Global Policy Lab
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

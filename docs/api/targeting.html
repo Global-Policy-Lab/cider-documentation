@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Targeting API Reference</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Fairness API Reference" href="fairness.html" />
     <link rel="prev" title="Home Location API Reference" href="home_location.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -395,275 +397,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="targeting-api-reference">
-<h1>Targeting API Reference<a class="headerlink" href="#targeting-api-reference" title="Permalink to this headline">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="cider.targeting.Targeting">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Targeting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>datastore</strong> (<a class="reference internal" href="datastore.html#cider.datastore.DataStore" title="cider.datastore.DataStore"><em>cider.datastore.DataStore</em></a>) – </p></li>
-<li><p><strong>clean_folders</strong> (<em>bool</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.auc_overall">
-<span class="sig-name descname"><span class="pre">auc_overall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">99</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.auc_overall" title="Permalink to this definition">#</a></dt>
-<dd><p>Computed the ROC-AUC scores at ‘n_grid’ equally spaced percentile thresholds.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>var1</strong> (<em>str</em>) – The first variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>var2</strong> (<em>str</em>) – The second variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>n_grid</strong> (<em>int</em>) – The number of percentiles to compute the AUC scores for.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Dict</em>[str, <em>List</em>[float]]</p>
-</dd>
-</dl>
-<p>Returns: A dict with false/true positive rates and AUC scores for ‘n_grid’ percentiles between 0 and 100.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.auc_threshold">
-<span class="sig-name descname"><span class="pre">auc_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.auc_threshold" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes the ROC-AUC score when the numerical variables are turned into binary using a certain threshold.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>var1</strong> (<em>str</em>) – The first variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>var2</strong> (<em>str</em>) – The second variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile to use to convert numerical values into binary.</p></li>
-<li><p><strong>t</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The threshold to use to convert numerical values into binary.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Dict</em>[str, <em>List</em>[float]]</p>
-</dd>
-</dl>
-<p>Returns: A dict with AUC score and false/true positive rate.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.binary_metrics">
-<span class="sig-name descname"><span class="pre">binary_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.binary_metrics" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes several classification metrics for two numerical variables, usually a ground-truth one and its
-prediction; these are first converted into binary variables using the percentiles or thresholds provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>var1</strong> (<em>str</em>) – The first variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>var2</strong> (<em>str</em>) – The second variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>p1</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Percentile for the first variable.</p></li>
-<li><p><strong>p2</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Percentile for the second variable.</p></li>
-<li><p><strong>t1</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Threshold for the first variable.</p></li>
-<li><p><strong>t2</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Threshold for the second variable.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Dict</em>[str, float]</p>
-</dd>
-</dl>
-<p>Returns: A dictionary with results on accuracy, precision, recall, true and false positive rates.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.precision_recall_curves">
-<span class="sig-name descname"><span class="pre">precision_recall_curves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundtruth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.precision_recall_curves" title="Permalink to this definition">#</a></dt>
-<dd><p>Plots the ROC curves for all targeting methods specified by ‘proxies’, using the percentile/threshold
-provided OR a set of ‘n_grid’ equally spaced percentiles.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>groundtruth</strong> (<em>str</em>) – The name of the groundtruth column in the targeting dataset.</p></li>
-<li><p><strong>proxies</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The list of targeting methods to be compared against each other; each name should have a
-corresponding column in the targeting dataset.</p></li>
-<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile to use to convert numerical values into binary.</p></li>
-<li><p><strong>t</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The threshold to use to convert numerical values into binary.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>n_grid</strong> (<em>int</em>) – The number of equally-spaced percentiles to compute the metrics for.</p></li>
-<li><p><strong>colors</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em>) – Color palette to use.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.roc_curves">
-<span class="sig-name descname"><span class="pre">roc_curves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundtruth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.roc_curves" title="Permalink to this definition">#</a></dt>
-<dd><p>Plots the ROC curves for all targeting methods specified by ‘proxies’, using the percentile or threshold
-provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>groundtruth</strong> (<em>str</em>) – The name of the groundtruth column in the targeting dataset.</p></li>
-<li><p><strong>proxies</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The list of targeting methods to be compared against each other; each name should have a
-corresponding column in the targeting dataset.</p></li>
-<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile to use to convert numerical values into binary.</p></li>
-<li><p><strong>t</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The threshold to use to convert numerical values into binary.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>colors</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em>) – Dict mapping proxy names to the color to use (in the default color palette)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.targeting_table">
-<span class="sig-name descname"><span class="pre">targeting_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundtruth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.targeting_table" title="Permalink to this definition">#</a></dt>
-<dd><p>Produces a table with the following metrics for all targeting methods specified by ‘proxies’: Pearson and
-Spearman correlation, threshold-specific and threshold-agnostic AUC, accuracy, precision, and recall.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>groundtruth</strong> (<em>str</em>) – The name of the groundtruth column in the targeting dataset.</p></li>
-<li><p><strong>proxies</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The list of targeting methods to be compared against each other; each name should have a
-corresponding column in the targeting dataset.</p></li>
-<li><p><strong>p1</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile threshold to use for the groundtruth variable.</p></li>
-<li><p><strong>p2</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile threshold to use for the proxy variables.</p></li>
-<li><p><strong>t1</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The threshold to use for the groundtruth variable.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: The pandas dataframe with all the performance metrics as columns and the proxies as rows.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.threshold_to_percentile">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">threshold_to_percentile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_percentiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.threshold_to_percentile" title="Permalink to this definition">#</a></dt>
-<dd><p>If a percentile is provided, checks if it’s between 0 and 100 and if so returns it; if a threshold is provided,
-returns the fraction of records in the dataset and for column ‘var’ that are below the threshold.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile.</p></li>
-<li><p><strong>t</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The threshold.</p></li>
-<li><p><strong>data</strong> (<em>pandas.core.frame.DataFrame</em>) – The pandas dataframe containing the data.</p></li>
-<li><p><strong>var</strong> (<em>str</em>) – The column with the records to use to compute the percentile.</p></li>
-<li><p><strong>test_percentiles</strong> (<em>bool</em>) – If true checks that the percentile provided is correct.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Union</em>[float, int]</p>
-</dd>
-</dl>
-<p>Returns: The percentile corresponding to the input (threshold or percentile) provided.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.utility">
-<span class="sig-name descname"><span class="pre">utility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transfer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.utility" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes the constant relative risk-aversion (CRRA) [Hanna &amp; Olken (2018)] utility when P% of the population is
-targeted and they receive transfers of size ‘transfer_size’.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>var1</strong> (<em>str</em>) – The first variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>var2</strong> (<em>str</em>) – The second variable to use in the analysis; it has to be a column in the targeting dataset.</p></li>
-<li><p><strong>transfer_size</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em>) – The size of the cash transfer.</p></li>
-<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The percentile to use to convert numerical values into binary.</p></li>
-<li><p><strong>t</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The threshold to use to convert numerical values into binary.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>rho</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – The rho parameter in the constant relative risk-aversion (CRRA) utility function.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-<p>Returns: The utility obtained by targeting that fraction of the population with that transfer size.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.utility_curves">
-<span class="sig-name descname"><span class="pre">utility_curves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundtruth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubi_transfer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.utility_curves" title="Permalink to this definition">#</a></dt>
-<dd><p>Plots the utility curves of all targeting methods specified by ‘proxies’, when targeting ‘n_grid’ equally
-spaced fractions of the population.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>groundtruth</strong> (<em>str</em>) – The name of the groundtruth column in the targeting dataset.</p></li>
-<li><p><strong>proxies</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The list of targeting methods to be compared against each other; each name should have a
-corresponding column in the targeting dataset.</p></li>
-<li><p><strong>ubi_transfer_size</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – The size of the cash transfer if the entire population was targeted.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>n_grid</strong> (<em>int</em>) – The number of equally-spaced percentiles to compute the metrics for.</p></li>
-<li><p><strong>colors</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em>) – Color palette to use.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.utility_grid">
-<span class="sig-name descname"><span class="pre">utility_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundtruth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubi_transfer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">99</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.utility_grid" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes the utility achieved by all targeting methods specified by ‘proxies’, when targeting ‘n_grid’ equally
-spaced fractions of the population.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>groundtruth</strong> (<em>str</em>) – The name of the groundtruth column in the targeting dataset.</p></li>
-<li><p><strong>proxies</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The list of targeting methods to be compared against each other; each name should have a
-corresponding column in the targeting dataset.</p></li>
-<li><p><strong>ubi_transfer_size</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – The size of the cash transfer if the entire population was targeted.</p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>n_grid</strong> (<em>int</em>) – The number of equally-spaced percentiles to compute the metrics for.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Tuple</em>[numpy.ndarray, <em>List</em>[float], <em>Dict</em>[str, <em>List</em>[float]]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cider.targeting.Targeting.utility_table">
-<span class="sig-name descname"><span class="pre">utility_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundtruth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubi_transfer_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">99</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.targeting.Targeting.utility_table" title="Permalink to this definition">#</a></dt>
-<dd><p>Computes the optimal share of the population targeted, maximum utility, and optimal transfer size of all
-targeting methods specified by ‘proxies’, out of ‘n_grid’ equally spaced fractions of the population.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>groundtruth</strong> (<em>str</em>) – The name of the groundtruth column in the targeting dataset.</p></li>
-<li><p><strong>proxies</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – The list of targeting methods to be compared against each other; each name should have a
-corresponding column in the targeting dataset.</p></li>
-<li><p><strong>ubi_transfer_size</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – </p></li>
-<li><p><strong>weighted</strong> (<em>bool</em>) – If True the weighted version of the dataset will be used.</p></li>
-<li><p><strong>n_grid</strong> (<em>int</em>) – The number of equally-spaced percentiles to compute the metrics for.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: The pandas dataframe with optimal utility metrics for each targeting method.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
+  <section id="targeting-api-reference">
+<h1>Targeting API Reference<a class="headerlink" href="#targeting-api-reference" title="Permalink to this heading">#</a></h1>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -691,7 +427,10 @@ corresponding column in the targeting dataset.</p></li>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="home_location.html"
@@ -711,7 +450,10 @@ corresponding column in the targeting dataset.</p></li>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -721,7 +463,7 @@ corresponding column in the targeting dataset.</p></li>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -751,7 +493,7 @@ By UC Berkeley Global Policy Lab
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -760,8 +502,8 @@ By UC Berkeley Global Policy Lab
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
