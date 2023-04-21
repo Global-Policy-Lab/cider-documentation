@@ -1,4 +1,0 @@
-# Recommended contexts for cider
-
-
-
