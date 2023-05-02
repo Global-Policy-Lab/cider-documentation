@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Datastore API Reference</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,16 +34,28 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -53,6 +64,21 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/jquery-3.5.1.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -67,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Survey API Reference" href="poverty_survey.html" />
     <link rel="prev" title="Targeting and Fairness Data" href="../data_formats/targeting_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -408,15 +434,302 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="datastore-api-reference">
-<h1>Datastore API Reference<a class="headerlink" href="#datastore-api-reference" title="Permalink to this heading">#</a></h1>
-<section id="datastore-class">
-<h2>DataStore Class<a class="headerlink" href="#datastore-class" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="optdatastore-class">
-<h2>OptDataStore Class<a class="headerlink" href="#optdatastore-class" title="Permalink to this heading">#</a></h2>
-</section>
-</section>
+  <div class="section" id="datastore-api-reference">
+<h1>Datastore API Reference<a class="headerlink" href="#datastore-api-reference" title="Permalink to this headline">#</a></h1>
+<div class="section" id="datastore-class">
+<h2>DataStore Class<a class="headerlink" href="#datastore-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cider.datastore.DataStore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file_path_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spark</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_file_path_string</strong> (<em>str</em>) – </p></li>
+<li><p><strong>spark</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_antennas">
+<span class="sig-name descname"><span class="pre">_load_antennas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_antennas" title="Permalink to this definition">#</a></dt>
+<dd><p>Load antennas data: use file path specified in config as default, or spark/pandas df</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>pyspark.sql.dataframe.DataFrame</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em><em>]</em>) – spark/pandas df to assign if available</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_cdr">
+<span class="sig-name descname"><span class="pre">_load_cdr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_cdr" title="Permalink to this definition">#</a></dt>
+<dd><p>Load cdr data: use file path specified in config as default, or spark/pandas df</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>pyspark.sql.dataframe.DataFrame</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em><em>]</em>) – spark/pandas df to assign if available</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_fairness">
+<span class="sig-name descname"><span class="pre">_load_fairness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_fairness" title="Permalink to this definition">#</a></dt>
+<dd><p>Load fairness data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_features">
+<span class="sig-name descname"><span class="pre">_load_features</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_features" title="Permalink to this definition">#</a></dt>
+<dd><p>Load phone usage features to be used for training ML model and subsequent poverty prediction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_home_ground_truth">
+<span class="sig-name descname"><span class="pre">_load_home_ground_truth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_home_ground_truth" title="Permalink to this definition">#</a></dt>
+<dd><p>Load ground truth data for home locations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_labels">
+<span class="sig-name descname"><span class="pre">_load_labels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_labels" title="Permalink to this definition">#</a></dt>
+<dd><p>Load labels to train ML model on</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_mobiledata">
+<span class="sig-name descname"><span class="pre">_load_mobiledata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_mobiledata" title="Permalink to this definition">#</a></dt>
+<dd><p>Load mobile data: use file path specified in config as default, or spark/pandas df</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>pyspark.sql.dataframe.DataFrame</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em><em>]</em>) – spark/pandas df to assign if available</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_mobilemoney">
+<span class="sig-name descname"><span class="pre">_load_mobilemoney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_mobilemoney" title="Permalink to this definition">#</a></dt>
+<dd><p>Load mobile money data: use file path specified in config as default, or spark/pandas df</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>pyspark.sql.dataframe.DataFrame</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em><em>]</em>) – spark/pandas df to assign if available</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_poverty_scores">
+<span class="sig-name descname"><span class="pre">_load_poverty_scores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_poverty_scores" title="Permalink to this definition">#</a></dt>
+<dd><p>Load poverty scores (e.g. those produced by the ML module)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_recharges">
+<span class="sig-name descname"><span class="pre">_load_recharges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_recharges" title="Permalink to this definition">#</a></dt>
+<dd><p>Load recharges data: use file path specified in config as default, or spark/pandas df</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>pyspark.sql.dataframe.DataFrame</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em><em>]</em>) – spark/pandas df to assign if available</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_shapefiles">
+<span class="sig-name descname"><span class="pre">_load_shapefiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_shapefiles" title="Permalink to this definition">#</a></dt>
+<dd><p>Iterate through shapefiles specified in config and load them in self.shapefiles dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore._load_targeting">
+<span class="sig-name descname"><span class="pre">_load_targeting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore._load_targeting" title="Permalink to this definition">#</a></dt>
+<dd><p>Load targeting data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore.deduplicate">
+<span class="sig-name descname"><span class="pre">deduplicate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore.deduplicate" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove duplicate rows from alla available datasets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore.filter_dates">
+<span class="sig-name descname"><span class="pre">filter_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore.filter_dates" title="Permalink to this definition">#</a></dt>
+<dd><p>Filter data outside [start_date, end_date] (inclusive) in all available datasets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_date</strong> (<em>str</em>) – e.g. ‘2020-01-01’</p></li>
+<li><p><strong>end_date</strong> (<em>str</em>) – e.g. ‘2020-01-10’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore.load_data">
+<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore.load_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Load all datasets defined by data_type_map; raise an error if any of them failed to load</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type_map</strong> (<em>Mapping</em><em>[</em><em>cider.datastore.DataType</em><em>, </em><em>Optional</em><em>[</em><em>Union</em><em>[</em><em>pyspark.sql.dataframe.DataFrame</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em><em>]</em><em>]</em>) – mapping between DataType(s) and dataframes, if provided. If None look at config file</p></li>
+<li><p><strong>all_required</strong> (<em>bool</em>) – If True, throws an error if any dataset specified fails to load or is not provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore.merge" title="Permalink to this definition">#</a></dt>
+<dd><p>Merge features and labels, split into x and y dataframes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.DataStore.remove_survey_outliers">
+<span class="sig-name descname"><span class="pre">remove_survey_outliers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.DataStore.remove_survey_outliers" title="Permalink to this definition">#</a></dt>
+<dd><p>Removes observations with outliers in the columns listed in ‘cols’ from the survey data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cols</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Columns used to identify outliers.</p></li>
+<li><p><strong>num_sds</strong> (<em>float</em>) – Number of standard deviations used to identify outliers.</p></li>
+<li><p><strong>dry_run</strong> (<em>bool</em>) – If True, only prints the number of outliers without removing them.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Set</em>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="optdatastore-class">
+<h2>OptDataStore Class<a class="headerlink" href="#optdatastore-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cider.datastore.OptDataStore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OptDataStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file_path_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.OptDataStore" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config_file_path_string</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.OptDataStore.initialize_user_consent_table">
+<span class="sig-name descname"><span class="pre">initialize_user_consent_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_from_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.OptDataStore.initialize_user_consent_table" title="Permalink to this definition">#</a></dt>
+<dd><p>Create table of all user ids present in the datasets, and whether they should be included in the analysis or not
+This is defined by the opt_in_default parameter specified in the config file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>read_from_file</strong> (<em>bool</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.OptDataStore.opt_in">
+<span class="sig-name descname"><span class="pre">opt_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.OptDataStore.opt_in" title="Permalink to this definition">#</a></dt>
+<dd><p>Update the user consent table based on list of user ids that have opted in</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_ids</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of user ids to flag as opted in, i.e. include = True</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cider.datastore.OptDataStore.opt_out">
+<span class="sig-name descname"><span class="pre">opt_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.datastore.OptDataStore.opt_out" title="Permalink to this definition">#</a></dt>
+<dd><p>Update the user consent table based on list of user ids that have opted out</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_ids</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of user ids to flag as opted out, i.e. include = False</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -444,10 +757,7 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../data_formats/targeting_data.html"
@@ -467,10 +777,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -495,7 +802,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -525,7 +832,7 @@ By UC Berkeley Global Policy Lab
     
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -534,8 +841,8 @@ By UC Berkeley Global Policy Lab
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>
