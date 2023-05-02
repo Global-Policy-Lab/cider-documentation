@@ -1,38 +1,30 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anonymizer</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>Anonymizer</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -47,11 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" />
     <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -59,7 +50,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -79,7 +70,7 @@
     <script src="../_static/underscore-1.12.0.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -87,91 +78,57 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'quickstart/documentation_anonymizer';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -180,260 +137,474 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Source Guide</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Open Source Guide
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../introduction/goals.html">Goals for cider</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/features.html">Overview of features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">Adherance to data privacy standards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/trainingdata.html">Recommendations: Training Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/verification.html">Recommendations: Output verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/research.html">Research and resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/opensource.html">Open source management</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/goals.html">
+   Goals for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/features.html">
+   Overview of features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/privacy.html">
+   Adherance to data privacy standards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/trainingdata.html">
+   Recommendations: Training Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/verification.html">
+   Recommendations: Output verification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/research.html">
+   Research and resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/opensource.html">
+   Open source management
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Quickstart
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poverty_survey.html">Poverty Outcome Generation from Survey Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation_featurizer.html">Featurizer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation_ml.html">Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation_home_location.html">Home Location Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation_targeting.html">Targeting Evaluations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation_fairness.html">Fairness Evaluations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation_satellite.html">Satellite</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="config.html">
+   Configuration file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="poverty_survey.html">
+   Poverty Outcome Generation from Survey Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_featurizer.html">
+   Featurizer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_ml.html">
+   Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_home_location.html">
+   Home Location Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_targeting.html">
+   Targeting Evaluations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_fairness.html">
+   Fairness Evaluations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_satellite.html">
+   Satellite
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Standardized data formats</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Standardized data formats
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/cdr.html">CDR (call and text)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/antennas.html">Antennas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/recharges.html">Recharges</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/mobile_data.html">Mobile Data Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/mobile_money.html">Mobile Money</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/spatial.html">Spatial Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/features.html">Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/poverty_labels.html">Poverty Labels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/home_locations.html">Home Location Labels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/survey_data.html">Survey Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_formats/targeting_data.html">Targeting and Fairness Data</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/cdr.html">
+   CDR (call and text)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/antennas.html">
+   Antennas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/recharges.html">
+   Recharges
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/mobile_data.html">
+   Mobile Data Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/mobile_money.html">
+   Mobile Money
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/spatial.html">
+   Spatial Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/features.html">
+   Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/poverty_labels.html">
+   Poverty Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/home_locations.html">
+   Home Location Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/survey_data.html">
+   Survey Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_formats/targeting_data.html">
+   Targeting and Fairness Data
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">API REFERENCE</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API REFERENCE
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../api/datastore.html">Datastore API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/poverty_survey.html">Survey API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/featurizer.html">Featurizer API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/ml.html">ML API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/home_location.html">Home Location API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/targeting.html">Targeting API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/fairness.html">Fairness API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/satellite.html">Satellite API Reference</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/datastore.html">
+   Datastore API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/poverty_survey.html">
+   Survey API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/featurizer.html">
+   Featurizer API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/ml.html">
+   ML API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/home_location.html">
+   Home Location API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/targeting.html">
+   Targeting API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/fairness.html">
+   Fairness API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/satellite.html">
+   Satellite API Reference
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/Global-Policy-Lab/cider" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fquickstart/documentation_anonymizer.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/quickstart/documentation_anonymizer.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://mybinder.org/v2/gh/Global-Policy-Lab/cider/master?urlpath=tree/docs/quickstart/documentation_anonymizer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Global-Policy-Lab/cider"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Anonymizer</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anonymize-input-data">Anonymize input data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anonymize-features">Anonymize features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-custom-format-checker">Use a custom format checker</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fquickstart/documentation_anonymizer.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/quickstart/documentation_anonymizer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymize-input-data">
+   Anonymize input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymize-features">
+   Anonymize features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-a-custom-format-checker">
+   Use a custom format checker
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Anonymizer</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymize-input-data">
+   Anonymize input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymize-features">
+   Anonymize features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-a-custom-format-checker">
+   Use a custom format checker
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="anonymizer">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="anonymizer">
 <h1>Anonymizer<a class="headerlink" href="#anonymizer" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -446,7 +617,6 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># Prevents python version mismatches between spark driver and executor</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYSPARK_PYTHON&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYSPARK_DRIVER_PYTHON&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
 </pre></div>
@@ -456,12 +626,11 @@ document.write(`
 <p>Set up the configuration file and load some simulated data, including featurization results if present, using the datastore.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This path should point to your cider installation, where configs and data for this demo are located. In particular, this file must</span>
-<span class="c1"># contain a </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This path should point to your cider installation, where configs and data for this demo are located.</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="n">cider_installation_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../cider&#39;</span><span class="p">)</span>
 
-<span class="n">datastore</span> <span class="o">=</span> <span class="n">DataStore</span><span class="p">(</span><span class="n">config_file_path_string</span><span class="o">=</span> <span class="n">cider_installation_directory</span> <span class="o">/</span> <span class="s1">&#39;configs&#39;</span> <span class="o">/</span> <span class="s1">&#39;config_anonymize.yml&#39;</span><span class="p">)</span>
+<span class="n">datastore</span> <span class="o">=</span> <span class="n">DataStore</span><span class="p">(</span><span class="n">config_file_path_string</span><span class="o">=</span> <span class="n">cider_installation_directory</span> <span class="o">/</span> <span class="s1">&#39;configs&#39;</span> <span class="o">/</span> <span class="s1">&#39;colab_walkthrough&#39;</span> <span class="o">/</span> <span class="s1">&#39;config_anonymize.yml&#39;</span><span class="p">)</span>
 <span class="n">anonymizer</span> <span class="o">=</span> <span class="n">Anonymizer</span><span class="p">(</span><span class="n">datastore</span><span class="o">=</span><span class="n">datastore</span><span class="p">)</span>
 
 <span class="n">outputs_path</span> <span class="o">=</span> <span class="n">anonymizer</span><span class="o">.</span><span class="n">outputs_path</span>
@@ -469,15 +638,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/02 11:58:40 WARN Utils: Your hostname, Leos-MacBook-Air.local resolves to a loopback address: 127.0.0.1; using 192.168.50.152 instead (on interface en0)
-23/05/02 11:58:40 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting default log level to &quot;WARN&quot;.
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/02 11:58:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/04/17 11:56:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/04/17 11:56:35 WARN Utils: Service &#39;SparkUI&#39; could not bind on port 4040. Attempting port 4041.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
@@ -497,7 +663,7 @@ Loading mobile money...
 </div>
 </div>
 </div>
-<div class="section" id="anonymize-input-data">
+<section id="anonymize-input-data">
 <h2>Anonymize input data<a class="headerlink" href="#anonymize-input-data" title="Permalink to this headline">#</a></h2>
 <p>We can anonymize the five main categories of input data which contain phone numbers:</p>
 <ul class="simple">
@@ -514,7 +680,7 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anonymizer</span><span class="o">.</span><span class="n">anonymize_cdr</span><span class="p">()</span>
 
 <span class="n">anonymized_cdr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="s1">&#39;cdr.csv&#39;</span><span class="p">)</span>
-<span class="n">anonymized_cdr</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># anonymized_cdr.head()</span>
 </pre></div>
 </div>
 </div>
@@ -522,100 +688,14 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>txn_type</th>
-      <th>caller_id</th>
-      <th>recipient_id</th>
-      <th>timestamp</th>
-      <th>duration</th>
-      <th>caller_antenna</th>
-      <th>recipient_antenna</th>
-      <th>international</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>call</td>
-      <td>bLXgD9re7YmQAanW</td>
-      <td>M0G6yPrmRxlDRK7p</td>
-      <td>2020-01-01 00:00:42</td>
-      <td>253.0</td>
-      <td>a101</td>
-      <td>a54</td>
-      <td>domestic</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>text</td>
-      <td>G5vAyAYdVGxyadO9</td>
-      <td>jVa6z1KrX1lQdMvE</td>
-      <td>2020-01-01 00:02:04</td>
-      <td>NaN</td>
-      <td>a44</td>
-      <td>a110</td>
-      <td>domestic</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>text</td>
-      <td>Lw7K8zWqd2kQEPAm</td>
-      <td>Np7OPQL5w1OyvVaG</td>
-      <td>2020-01-01 00:02:12</td>
-      <td>NaN</td>
-      <td>a145</td>
-      <td>a96</td>
-      <td>domestic</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>call</td>
-      <td>VpAaQaEpX0MQe9qv</td>
-      <td>O8xoDrklJrrQEGLA</td>
-      <td>2020-01-01 00:02:23</td>
-      <td>96.0</td>
-      <td>a84</td>
-      <td>a36</td>
-      <td>domestic</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>text</td>
-      <td>EVpAaQaelY8Qe9qv</td>
-      <td>0vK4yVb9ja7y71OZ</td>
-      <td>2020-01-01 00:03:05</td>
-      <td>NaN</td>
-      <td>a261</td>
-      <td>a268</td>
-      <td>domestic</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anonymizer</span><span class="o">.</span><span class="n">anonymize_mobilemoney</span><span class="p">()</span>
 
 <span class="n">anonymized_mobilemoney</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="s1">&#39;mobilemoney.csv&#39;</span><span class="p">)</span>
-<span class="n">anonymized_mobilemoney</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># anonymized_mobilemoney.head()</span>
 </pre></div>
 </div>
 </div>
@@ -623,303 +703,37 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>txn_type</th>
-      <th>caller_id</th>
-      <th>recipient_id</th>
-      <th>timestamp</th>
-      <th>amount</th>
-      <th>sender_balance_before</th>
-      <th>sender_balance_after</th>
-      <th>recipient_balance_before</th>
-      <th>recipient_balance_after</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>p2p</td>
-      <td>gG5vAyA6pkxzadO9</td>
-      <td>bLXgD9o5xPayAanW</td>
-      <td>2020-01-01 00:15:51</td>
-      <td>55.163315</td>
-      <td>324.21875</td>
-      <td>269.05542</td>
-      <td>112.54498</td>
-      <td>167.70830</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>cashout</td>
-      <td>ZgErQY4EbL2DxP6V</td>
-      <td>NaN</td>
-      <td>2020-01-01 00:18:59</td>
-      <td>81.861000</td>
-      <td>185.57620</td>
-      <td>103.71520</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>cashin</td>
-      <td>MvZqyx7kRlxQen12</td>
-      <td>NaN</td>
-      <td>2020-01-01 00:28:17</td>
-      <td>29.225048</td>
-      <td>98.63829</td>
-      <td>127.86334</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>p2p</td>
-      <td>o0vK4yVX4YMD71OZ</td>
-      <td>9eALxDXjrWBydlpO</td>
-      <td>2020-01-01 00:28:29</td>
-      <td>45.561913</td>
-      <td>248.71838</td>
-      <td>203.15646</td>
-      <td>212.01639</td>
-      <td>257.57828</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>cashout</td>
-      <td>76YPy0l8OAMyJpN3</td>
-      <td>NaN</td>
-      <td>2020-01-01 00:31:03</td>
-      <td>55.040770</td>
-      <td>150.88644</td>
-      <td>95.84567</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anonymizer</span><span class="o">.</span><span class="n">anonymize_mobiledata</span><span class="p">()</span>
 
 <span class="n">anonymized_mobiledata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="s1">&#39;mobiledata.csv&#39;</span><span class="p">)</span>
-<span class="n">anonymized_mobiledata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># anonymized_mobiledata.head()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>caller_id</th>
-      <th>volume</th>
-      <th>timestamp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>BWvLyeoJmaODdYGA</td>
-      <td>91.38652</td>
-      <td>2020-01-01 00:01:15</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>en2JQGr5A24D0pYA</td>
-      <td>118.89835</td>
-      <td>2020-01-01 00:02:27</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>gG5vAyAkN8VDadO9</td>
-      <td>67.68214</td>
-      <td>2020-01-01 00:16:33</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>LKlVDmdbE4Vzvq1N</td>
-      <td>65.52507</td>
-      <td>2020-01-01 00:23:37</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>VpAaQaEpX0MQe9qv</td>
-      <td>99.46138</td>
-      <td>2020-01-01 00:41:44</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anonymizer</span><span class="o">.</span><span class="n">anonymize_recharges</span><span class="p">()</span>
 
 <span class="n">anonymized_recharges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="s1">&#39;recharges.csv&#39;</span><span class="p">)</span>
-<span class="n">anonymized_recharges</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># anonymized_recharges.head()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>caller_id</th>
-      <th>amount</th>
-      <th>timestamp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>EBj0nDOBBPJzK2OR</td>
-      <td>96.0</td>
-      <td>2020-01-01 00:02:47</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1Z7rQbwXr45ybpGg</td>
-      <td>73.0</td>
-      <td>2020-01-01 00:04:33</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>BkM4yRlYw11DRXve</td>
-      <td>98.0</td>
-      <td>2020-01-01 00:08:36</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>b7jV6QK6PZqD1YKw</td>
-      <td>7.0</td>
-      <td>2020-01-01 00:14:37</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AqnGeQjRBqvQXWRj</td>
-      <td>76.0</td>
-      <td>2020-01-01 00:24:36</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anonymizer</span><span class="o">.</span><span class="n">anonymize_labels</span><span class="p">()</span>
 
 <span class="n">anonymized_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="s1">&#39;labels.csv&#39;</span><span class="p">)</span>
-<span class="n">anonymized_labels</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="c1"># anonymized_labels.head()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>label</th>
-      <th>weight</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1Z7rQb4n838zbpGg</td>
-      <td>22023</td>
-      <td>3.711266</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>G5vAyA473wvQadO9</td>
-      <td>20709</td>
-      <td>69.385541</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>en2JQGr0ox8D0pYA</td>
-      <td>18707</td>
-      <td>67.035003</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>jNa6Q45Advlyxw83</td>
-      <td>20152</td>
-      <td>43.047178</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>G5vAyA4vo96QadO9</td>
-      <td>22256</td>
-      <td>76.778898</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -932,15 +746,15 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="anonymize-features">
+</section>
+<section id="anonymize-features">
 <h2>Anonymize features<a class="headerlink" href="#anonymize-features" title="Permalink to this headline">#</a></h2>
 <p>We can also anonymize featurized data. This is not necessary (nor will it work) if the features are computed using already-anonymized data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anonymizer</span><span class="o">.</span><span class="n">anonymize_features</span><span class="p">()</span>
 <span class="n">anonymized_features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="s1">&#39;features.csv&#39;</span><span class="p">)</span>
-<span class="n">anonymized_features</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">anonymized_features</span><span class="o">.</span><span class="n">name_anonymized</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -948,204 +762,28 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>active_days_allweek_allday</th>
-      <th>active_days_allweek_day</th>
-      <th>active_days_allweek_night</th>
-      <th>active_days_weekday_allday</th>
-      <th>active_days_weekday_day</th>
-      <th>active_days_weekday_night</th>
-      <th>active_days_weekend_allday</th>
-      <th>active_days_weekend_day</th>
-      <th>active_days_weekend_night</th>
-      <th>...</th>
-      <th>mobilemoney_outgoing_p2p_amount_min</th>
-      <th>mobilemoney_outgoing_p2p_amount_max</th>
-      <th>mobilemoney_outgoing_p2p_balance_before_mean</th>
-      <th>mobilemoney_outgoing_p2p_balance_before_min</th>
-      <th>mobilemoney_outgoing_p2p_balance_before_max</th>
-      <th>mobilemoney_outgoing_p2p_balance_after_mean</th>
-      <th>mobilemoney_outgoing_p2p_balance_after_min</th>
-      <th>mobilemoney_outgoing_p2p_balance_after_max</th>
-      <th>mobilemoney_outgoing_p2p_txns</th>
-      <th>mobilemoney_outgoing_p2p_contacts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>x1Z7rQbM5O8DbpGg</td>
-      <td>54</td>
-      <td>46</td>
-      <td>46</td>
-      <td>38</td>
-      <td>33</td>
-      <td>32</td>
-      <td>16</td>
-      <td>13</td>
-      <td>14</td>
-      <td>...</td>
-      <td>30.222473</td>
-      <td>70.803710</td>
-      <td>206.221286</td>
-      <td>180.20338</td>
-      <td>239.67809</td>
-      <td>158.092635</td>
-      <td>109.39968</td>
-      <td>185.19756</td>
-      <td>6.0</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>7bLXgD9l64mzAanW</td>
-      <td>55</td>
-      <td>45</td>
-      <td>48</td>
-      <td>39</td>
-      <td>34</td>
-      <td>32</td>
-      <td>16</td>
-      <td>11</td>
-      <td>16</td>
-      <td>...</td>
-      <td>36.724060</td>
-      <td>65.197014</td>
-      <td>174.832893</td>
-      <td>94.95520</td>
-      <td>260.03677</td>
-      <td>125.468370</td>
-      <td>58.23114</td>
-      <td>209.75879</td>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>MLxA7zdWjO1ybVY1</td>
-      <td>52</td>
-      <td>43</td>
-      <td>42</td>
-      <td>36</td>
-      <td>30</td>
-      <td>29</td>
-      <td>16</td>
-      <td>13</td>
-      <td>13</td>
-      <td>...</td>
-      <td>25.403230</td>
-      <td>69.630840</td>
-      <td>197.661448</td>
-      <td>143.49661</td>
-      <td>251.89214</td>
-      <td>151.198061</td>
-      <td>101.53663</td>
-      <td>226.48890</td>
-      <td>9.0</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>b7MgqDw5jkXyjo6W</td>
-      <td>56</td>
-      <td>46</td>
-      <td>42</td>
-      <td>40</td>
-      <td>33</td>
-      <td>28</td>
-      <td>16</td>
-      <td>13</td>
-      <td>14</td>
-      <td>...</td>
-      <td>35.615395</td>
-      <td>63.297916</td>
-      <td>205.654711</td>
-      <td>158.98051</td>
-      <td>267.41220</td>
-      <td>152.560454</td>
-      <td>101.69055</td>
-      <td>214.87619</td>
-      <td>7.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AqnGeQjNrYBQXWRj</td>
-      <td>53</td>
-      <td>42</td>
-      <td>42</td>
-      <td>38</td>
-      <td>32</td>
-      <td>28</td>
-      <td>15</td>
-      <td>10</td>
-      <td>14</td>
-      <td>...</td>
-      <td>43.855840</td>
-      <td>65.405270</td>
-      <td>197.622427</td>
-      <td>157.64932</td>
-      <td>236.83188</td>
-      <td>147.132861</td>
-      <td>111.95184</td>
-      <td>192.97603</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 1122 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    x1Z7rQbM5O8DbpGg
+1    x1Z7rQbM5O8DbpGg
+2    7bLXgD9l64mzAanW
+3    7bLXgD9l64mzAanW
+4    MLxA7zdWjO1ybVY1
+Name: name_anonymized, dtype: object
+</pre></div>
 </div>
 </div>
-<div class="section" id="use-a-custom-format-checker">
+</div>
+</section>
+<section id="use-a-custom-format-checker">
 <h2>Use a custom format checker<a class="headerlink" href="#use-a-custom-format-checker" title="Permalink to this headline">#</a></h2>
-<p>**THIS STEP DOES NOT WORK! The checker assumes phone numbers complying with the format options described below, but Cider has a bug: In feature tables, it interprets phone numbers as integers, dropping leading +’s and 0’s. Once that bug is fixed, it’s necessary to re-generate synthetic data, run the featurization notebook on those updated labels, and copy its output to synthetic_datasets/features.csv, so that this step, and the ML notebook, both work.  **</p>
 <p>You may want to check the format of numbers as you anonymize them. Because the anonymizer uses a hash function, similar numbers will <em>not</em> result in similar anonymized strings. For example, the numbers 1234567, 01234567, and 880 1234567 will all result in completely different anonymized strings.</p>
 <p>The Anonymizer object accepts a format checker when it’s constructed. The checker will be evaluated on inputs as strings, and should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the format is acceptable and <code class="docutils literal notranslate"><span class="pre">False</span></code> if not.</p>
 <p>Anonymization will fail if any number fails this check. So we encourage you to clean your data prior to passing it through this step.</p>
-<p>This demo is based on a simplified version of Bangladesh’s <a class="reference external" href="https://en.wikipedia.org/wiki/Telephone_numbers_in_Bangladesh">mobile phone number format</a>. We’re assuming the following relatively-simple format options, with nothing else permitted:</p>
-<ul class="simple">
-<li><p>From within Bangladesh: 0 &lt;3-digit operator prefix&gt; &lt;subscriber number&gt;</p></li>
-<li><p>From outside Bangladesh: +880 &lt;3-digit operator prefix&gt; &lt;subscriber number&gt;</p></li>
-</ul>
-<p>And where the operator prefix must start with the string ‘01’.</p>
-<p>There are some considerations not taken into account by this small example:</p>
-<ul class="simple">
-<li><p>It’s important to be consistent here. For example, if a numbers is represented differently based on where the call is dialed from, it’s necessary to normalize: Perhaps by stripping the country code and also the domestic prefix (here ‘0’), and by stripping the operator prefix. The anonymizer does not intelligently map two representations of the same number to the same string.</p></li>
-<li><p>Cider expects information about whether calls/texts are domestic or international to be provided. So it’s likely users will already have checked number prefixes, and perhaps removed them.</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">format_checker</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">raw</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">):</span>
-        <span class="n">no_plus</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_plus</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;880&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_plus</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">False</span>
-    
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">raw</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;001&#39;</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A silly example: Some numbers will start with 1, so we&#39;ll see validation errors here.</span>
+<span class="k">def</span> <span class="nf">format_checker</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">raw</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
     
     <span class="k">return</span> <span class="kc">True</span>
 
@@ -1154,7 +792,8 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading CDR...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running
+Loading CDR...
 Loading recharges...
 SUCCESS!
 Loading mobile data...
@@ -1170,11 +809,42 @@ Loading mobile money...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/02 11:59:18 ERROR Executor: Exception in task 1.0 in stage 48.0 (TID 44)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/04/12 10:54:23 ERROR Executor: Exception in task 0.0 in stage 106.0 (TID 106)
 org.apache.spark.api.python.PythonException: Traceback (most recent call last):
-  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 142, in &lt;lambda&gt;
-    lambda raw: Anonymizer._check_identifier_format_and_hash(raw, encoder, format_checker), StringType()
-  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 197, in _check_identifier_format_and_hash
+  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 132, in &lt;lambda&gt;
+    new_column = udf(
+  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 180, in _check_identifier_format_and_hash
+    raise ValueError(f&#39;Bad input to anonymization: {raw_string} rejected by provided format format_checker.&#39;)
+ValueError: Bad input to anonymization: 1275856 rejected by provided format format_checker.
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:552)
+	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:86)
+	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:68)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:505)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage2.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$1.hasNext(WholeStageCodegenExec.scala:760)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)
+	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:52)
+	at org.apache.spark.scheduler.Task.run(Task.scala:136)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+23/04/12 10:54:23 ERROR Executor: Exception in task 1.0 in stage 106.0 (TID 107)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 132, in &lt;lambda&gt;
+    new_column = udf(
+  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 180, in _check_identifier_format_and_hash
     raise ValueError(f&#39;Bad input to anonymization: {raw_string} rejected by provided format format_checker.&#39;)
 ValueError: Bad input to anonymization: 1728786 rejected by provided format format_checker.
 
@@ -1186,7 +856,7 @@ ValueError: Bad input to anonymization: 1728786 rejected by provided format form
 	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage2.processNext(Unknown Source)
 	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
 	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$1.hasNext(WholeStageCodegenExec.scala:760)
 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
@@ -1201,53 +871,27 @@ ValueError: Bad input to anonymization: 1728786 rejected by provided format form
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
-23/05/02 11:59:18 ERROR Executor: Exception in task 0.0 in stage 48.0 (TID 43)
-org.apache.spark.api.python.PythonException: Traceback (most recent call last):
-  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 142, in &lt;lambda&gt;
-    lambda raw: Anonymizer._check_identifier_format_and_hash(raw, encoder, format_checker), StringType()
-  File &quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;, line 197, in _check_identifier_format_and_hash
-    raise ValueError(f&#39;Bad input to anonymization: {raw_string} rejected by provided format format_checker.&#39;)
-ValueError: Bad input to anonymization: 4295331 rejected by provided format format_checker.
-
-	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:552)
-	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:86)
-	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:68)
-	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:505)
-	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
-	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
-	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
-	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
-	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$1.hasNext(WholeStageCodegenExec.scala:760)
-	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)
-	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)
-	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
-	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:52)
-	at org.apache.spark.scheduler.Task.run(Task.scala:136)
-	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
-	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
-	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-23/05/02 11:59:18 ERROR TaskSetManager: Task 1 in stage 48.0 failed 1 times; aborting job
+23/04/12 10:54:23 ERROR TaskSetManager: Task 0 in stage 106.0 failed 1 times; aborting job
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">PythonException</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">anonymizer_with_check</span><span class="o">.</span><span class="n">anonymize_cdr</span><span class="p">()</span>
 
-<span class="nn">File ~/Documents/gpl/cider/cider/anonymizer.py:99,</span> in <span class="ni">Anonymizer.anonymize_cdr</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">anonymize_cdr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">99</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_anonymize_dataset</span><span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;caller_id&#39;</span><span class="p">,</span> <span class="s1">&#39;recipient_id&#39;</span><span class="p">])</span>
+<span class="nn">File ~/Documents/gpl/cider/cider/anonymizer.py:88,</span> in <span class="ni">Anonymizer.anonymize_cdr</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="k">def</span> <span class="nf">anonymize_cdr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">88</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_anonymize_dataset</span><span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;caller_id&#39;</span><span class="p">,</span> <span class="s1">&#39;recipient_id&#39;</span><span class="p">])</span>
 
-<span class="nn">File ~/Documents/gpl/cider/cider/anonymizer.py:157,</span> in <span class="ni">Anonymizer._anonymize_dataset</span><span class="nt">(self, dataset_name, column_names)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="s1">&#39;day&#39;</span> <span class="ow">in</span> <span class="n">dataset_with_anonymized_columns</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>     <span class="n">dataset_with_anonymized_columns</span> <span class="o">=</span> <span class="n">dataset_with_anonymized_columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;day&#39;</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">157</span> <span class="n">save_df</span><span class="p">(</span><span class="n">dataset_with_anonymized_columns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s1">.csv&#39;</span><span class="p">)</span>
+<span class="nn">File ~/Documents/gpl/cider/cider/anonymizer.py:138,</span> in <span class="ni">Anonymizer._anonymize_dataset</span><span class="nt">(self, dataset_name, column_names)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>         <span class="n">new_column</span> <span class="o">=</span> <span class="n">udf</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>             <span class="k">lambda</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Anonymizer</span><span class="o">.</span><span class="n">_check_identifier_format_and_hash</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">format_checker</span><span class="p">),</span> <span class="n">StringType</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="p">)(</span><span class="n">dataset</span><span class="p">[</span><span class="n">column_name</span><span class="p">])</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">column_name</span><span class="si">}</span><span class="s1">_anonymized&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="c1"># using the select function (instead of withColumn) places the new column at the beginning of the df</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>         <span class="n">dataset_with_anonymized_columns</span> <span class="o">=</span> <span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>             <span class="n">dataset_with_anonymized_columns</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">new_column</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">column_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="n">save_df</span><span class="p">(</span><span class="n">dataset_with_anonymized_columns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_path</span> <span class="o">/</span> <span class="s1">&#39;outputs&#39;</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s1">.csv&#39;</span><span class="p">)</span>
 
 <span class="nn">File ~/Documents/gpl/cider/helpers/utils.py:112,</span> in <span class="ni">save_df</span><span class="nt">(df, out_file_path, sep)</span>
 <span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="n">temp_folder</span> <span class="o">=</span> <span class="n">out_file_path</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;temp&#39;</span>
@@ -1293,17 +937,17 @@ ValueError: Bad input to anonymization: 4295331 rejected by provided format form
 <span class="ne">PythonException</span>: 
   <span class="n">An</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">thrown</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">Python</span> <span class="n">worker</span><span class="o">.</span> <span class="n">Please</span> <span class="n">see</span> <span class="n">the</span> <span class="n">stack</span> <span class="n">trace</span> <span class="n">below</span><span class="o">.</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">142</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="k">lambda</span><span class="o">&gt;</span>
-    <span class="k">lambda</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Anonymizer</span><span class="o">.</span><span class="n">_check_identifier_format_and_hash</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">format_checker</span><span class="p">),</span> <span class="n">StringType</span><span class="p">()</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">197</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_check_identifier_format_and_hash</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">132</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="k">lambda</span><span class="o">&gt;</span>
+    <span class="n">new_column</span> <span class="o">=</span> <span class="n">udf</span><span class="p">(</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/leo/Documents/gpl/cider/cider/anonymizer.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">180</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_check_identifier_format_and_hash</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Bad input to anonymization: </span><span class="si">{</span><span class="n">raw_string</span><span class="si">}</span><span class="s1"> rejected by provided format format_checker.&#39;</span><span class="p">)</span>
-<span class="ne">ValueError</span>: Bad input to anonymization: 1728786 rejected by provided format format_checker.
+<span class="ne">ValueError</span>: Bad input to anonymization: 1275856 rejected by provided format format_checker.
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1325,83 +969,36 @@ ValueError: Bad input to anonymization: 4295331 rejected by provided format form
     </script>
     <script>kernelName = 'conda_cider'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anonymize-input-data">Anonymize input data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anonymize-features">Anonymize features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-custom-format-checker">Use a custom format checker</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By UC Berkeley Global Policy Lab
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div></div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By UC Berkeley Global Policy Lab<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
