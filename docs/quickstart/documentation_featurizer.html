@@ -1,0 +1,1251 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Featurizer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/jquery-3.5.1.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quickstart/documentation_featurizer';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Machine Learning" href="documentation_ml.html" />
+    <link rel="prev" title="Poverty Outcome Generation from Survey Data" href="poverty_survey.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Source Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/goals.html">Goals for cider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/features.html">Overview of features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">Adherance to data privacy standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/trainingdata.html">Recommendations: Training Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/verification.html">Recommendations: Output verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/research.html">Research and resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/opensource.html">Open source management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poverty_survey.html">Poverty Outcome Generation from Survey Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Featurizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_home_location.html">Home Location Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_targeting.html">Targeting Evaluations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_fairness.html">Fairness Evaluations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_satellite.html">Satellite</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Standardized data formats</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/cdr.html">CDR (call and text)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/antennas.html">Antennas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/recharges.html">Recharges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/mobile_data.html">Mobile Data Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/mobile_money.html">Mobile Money</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/spatial.html">Spatial Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/poverty_labels.html">Poverty Labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/home_locations.html">Home Location Labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/survey_data.html">Survey Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_formats/targeting_data.html">Targeting and Fairness Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API REFERENCE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/datastore.html">Datastore API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/poverty_survey.html">Survey API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/featurizer.html">Featurizer API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ml.html">ML API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/home_location.html">Home Location API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/targeting.html">Targeting API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/fairness.html">Fairness API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/satellite.html">Satellite API Reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Global-Policy-Lab/cider" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fquickstart/documentation_featurizer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/quickstart/documentation_featurizer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Featurizer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="featurizer">
+<h1>Featurizer<a class="headerlink" href="#featurizer" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cider.datastore</span> <span class="kn">import</span> <span class="n">DataStore</span>
+<span class="kn">from</span> <span class="nn">cider.featurizer</span> <span class="kn">import</span> <span class="n">Featurizer</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYSPARK_PYTHON&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYSPARK_DRIVER_PYTHON&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load some mobile phone metadata. See <a class="reference internal" href="../data_formats/cdr.html"><span class="doc">standardized data formats</span></a> for file schemas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This path should point to your cider installation, where configs and data for this demo are located.</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">cider_installation_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../cider&#39;</span><span class="p">)</span>
+
+<span class="n">datastore</span> <span class="o">=</span> <span class="n">DataStore</span><span class="p">(</span><span class="n">config_file_path_string</span><span class="o">=</span> <span class="n">cider_installation_directory</span> <span class="o">/</span> <span class="s1">&#39;configs&#39;</span> <span class="o">/</span> <span class="s1">&#39;config_quickstart.yml&#39;</span><span class="p">)</span>
+<span class="n">featurizer</span> <span class="o">=</span> <span class="n">Featurizer</span><span class="p">(</span><span class="n">datastore</span><span class="o">=</span><span class="n">datastore</span><span class="p">,</span> <span class="n">clean_folders</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/02 12:25:19 WARN Utils: Your hostname, Leos-MacBook-Air.local resolves to a loopback address: 127.0.0.1; using 192.168.50.152 instead (on interface en0)
+23/05/02 12:25:19 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting default log level to &quot;WARN&quot;.
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/02 12:25:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/05/02 12:25:21 WARN Utils: Service &#39;SparkUI&#39; could not bind on port 4040. Attempting port 4041.
+Loading CDR...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading recharges...
+SUCCESS!
+Loading mobile data...
+Loading mobile money...
+Loading antennas...
+Warning: 10 antennas missing location
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remove duplicate records, filter to just a specific date range, remove outlier days and spammers based on call and text volumes, and remove duplicate records in CDR, recharges, mobile data records, and mobile money records.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deduplication</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">deduplicate</span><span class="p">()</span>
+
+<span class="c1"># Filter to just January 1 - February 28 (inclusive)</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filter_dates</span><span class="p">(</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-28&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove transactions involving spammers who place 1.8+ calls/texts per active day</span>
+<span class="n">spammers</span> <span class="o">=</span> <span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">remove_spammers</span><span class="p">(</span><span class="n">spammer_threshold</span><span class="o">=</span><span class="mf">1.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of spammers identified: 19
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all records from days more than 2 standard deviations from the mean transaction volume</span>
+<span class="n">outlier_days</span> <span class="o">=</span> <span class="n">featurizer</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filter_outlier_days</span><span class="p">(</span><span class="n">num_sds</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outliers removed: 2020-01-24, 2020-02-06
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/leo/Documents/gpl/cider/cider/datastore.py:446: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  timeseries = timeseries.groupby(&#39;day&#39;, as_index=False).agg(&#39;sum&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Produce summary statistics and plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">featurizer</span><span class="o">.</span><span class="n">diagnostic_statistics</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CDR&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 91299, &#39;Subscribers&#39;: 981, &#39;Recipients&#39;: 981}, &#39;Recharges&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 9315, &#39;Subscribers&#39;: 783}, &#39;Mobile Data&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 9388, &#39;Subscribers&#39;: 592}, &#39;Mobile Money&#39;: {&#39;Days&#39;: 59, &#39;Transactions&#39;: 5513, &#39;Subscribers&#39;: 682, &#39;Recipients&#39;: 700}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">diagnostic_plots</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<img alt="../_images/0baa2d1b6614760957f9c7e130f7643fa9a8215740f5064c4d19e2340c53e953.png" src="../_images/0baa2d1b6614760957f9c7e130f7643fa9a8215740f5064c4d19e2340c53e953.png" />
+<img alt="../_images/420e56c9d04afac8d7ab1ff9b8ead898e518fa45637dedd63079e362ed4b01b4.png" src="../_images/420e56c9d04afac8d7ab1ff9b8ead898e518fa45637dedd63079e362ed4b01b4.png" />
+<img alt="../_images/a76c6017f94af833687e9ea137109ae454f801502a006c5c4a7ab37753095121.png" src="../_images/a76c6017f94af833687e9ea137109ae454f801502a006c5c4a7ab37753095121.png" />
+<img alt="../_images/217dfbafff42bf53902754630d3584ef1c28e1337a4387022174d048c860ade6.png" src="../_images/217dfbafff42bf53902754630d3584ef1c28e1337a4387022174d048c860ade6.png" />
+<img alt="../_images/f6ed9b611ba83b40a98a9ebee3fd017cfffefd940355f9658bb0470189b6f5f0.png" src="../_images/f6ed9b611ba83b40a98a9ebee3fd017cfffefd940355f9658bb0470189b6f5f0.png" />
+<img alt="../_images/819d435fae7691f4cca334b738404eff509e379ce03d3b5f09cef917ecfc9339.png" src="../_images/819d435fae7691f4cca334b738404eff509e379ce03d3b5f09cef917ecfc9339.png" />
+<img alt="../_images/78ca32997367d38355e6289181ace06e351cb1d971d050449e81e67b0495230c.png" src="../_images/78ca32997367d38355e6289181ace06e351cb1d971d050449e81e67b0495230c.png" />
+<img alt="../_images/00fec8a4fb72951619620e90e8b354a2cff7fc37252ee242e2e50474afcc0a0e.png" src="../_images/00fec8a4fb72951619620e90e8b354a2cff7fc37252ee242e2e50474afcc0a0e.png" />
+</div>
+</div>
+<p>Featurize the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">cdr_features_spark</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">international_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">location_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">recharges_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">mobiledata_features</span><span class="p">()</span>
+<span class="n">featurizer</span><span class="o">.</span><span class="n">mobilemoney_features</span><span class="p">()</span>
+
+<span class="n">featurizer</span><span class="o">.</span><span class="n">all_features</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating CDR features...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating international features...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating spatial features...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/leo/miniconda3/envs/cider3.9/lib/python3.9/site-packages/pyproj/crs/crs.py:141: FutureWarning: &#39;+init=&lt;authority&gt;:&lt;code&gt;&#39; syntax is deprecated. &#39;&lt;authority&gt;:&lt;code&gt;&#39; is the preferred initialization method. When making the change, be mindful of axis order changes: https://pyproj4.github.io/pyproj/stable/gotchas.html#axis-order-changes-in-proj-6
+  in_crs_string = _prepare_from_proj_string(in_crs_string)
+/Users/leo/Documents/gpl/cider/cider/featurizer.py:370: UserWarning: CRS mismatch between the CRS of left geometries and the CRS of right geometries.
+Use `to_crs()` to reproject one of the input geometries to match the CRS of the other.
+
+Left CRS: +init=epsg:4326 +type=crs
+Right CRS: EPSG:4326
+
+  antennas = gpd.sjoin(antennas, shapefile, op=&#39;within&#39;, how=&#39;left&#39;).drop(&#39;index_right&#39;, axis=1)
+/Users/leo/Documents/gpl/cider/cider/featurizer.py:370: UserWarning: CRS mismatch between the CRS of left geometries and the CRS of right geometries.
+Use `to_crs()` to reproject one of the input geometries to match the CRS of the other.
+
+Left CRS: +init=epsg:4326 +type=crs
+Right CRS: EPSG:4326
+
+  antennas = gpd.sjoin(antennas, shapefile, op=&#39;within&#39;, how=&#39;left&#39;).drop(&#39;index_right&#39;, axis=1)
+/Users/leo/Documents/gpl/cider/cider/featurizer.py:370: UserWarning: CRS mismatch between the CRS of left geometries and the CRS of right geometries.
+Use `to_crs()` to reproject one of the input geometries to match the CRS of the other.
+
+Left CRS: +init=epsg:4326 +type=crs
+Right CRS: EPSG:4326
+
+  antennas = gpd.sjoin(antennas, shapefile, op=&#39;within&#39;, how=&#39;left&#39;).drop(&#39;index_right&#39;, axis=1)
+/Users/leo/miniconda3/envs/cider3.9/lib/python3.9/site-packages/pyspark/sql/pandas/conversion.py:474: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+  for column, series in pdf.iteritems():
+/Users/leo/miniconda3/envs/cider3.9/lib/python3.9/site-packages/pyspark/sql/pandas/conversion.py:486: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+  for column, series in pdf.iteritems():
+                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating recharges features...
+Calculating mobile data features...
+Calculating mobile money features...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we read the features back with pandas in to see what the table looks like. This works fine because our synthetic dataset is small, but such files can be too large to fit in memory if the number of subscribers is large; Cider uses <a class="reference external" href="https://spark.apache.org/docs/latest/api/python/">pyspark</a> to manage large datasets. Another option for working with large datasets is <a class="reference external" href="https://www.dask.org/">dask</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">path_to_all_features</span> <span class="o">=</span> <span class="n">datastore</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">working</span><span class="o">.</span><span class="n">directory_path</span> <span class="o">/</span> <span class="s1">&#39;featurizer&#39;</span> <span class="o">/</span> <span class="s1">&#39;datasets&#39;</span> <span class="o">/</span> <span class="s1">&#39;features.csv&#39;</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_all_features</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>active_days_allweek_allday</th>
+      <th>active_days_allweek_day</th>
+      <th>active_days_allweek_night</th>
+      <th>active_days_weekday_allday</th>
+      <th>active_days_weekday_day</th>
+      <th>active_days_weekday_night</th>
+      <th>active_days_weekend_allday</th>
+      <th>active_days_weekend_day</th>
+      <th>active_days_weekend_night</th>
+      <th>...</th>
+      <th>mobilemoney_outgoing_p2p_amount_min</th>
+      <th>mobilemoney_outgoing_p2p_amount_max</th>
+      <th>mobilemoney_outgoing_p2p_balance_before_mean</th>
+      <th>mobilemoney_outgoing_p2p_balance_before_min</th>
+      <th>mobilemoney_outgoing_p2p_balance_before_max</th>
+      <th>mobilemoney_outgoing_p2p_balance_after_mean</th>
+      <th>mobilemoney_outgoing_p2p_balance_after_min</th>
+      <th>mobilemoney_outgoing_p2p_balance_after_max</th>
+      <th>mobilemoney_outgoing_p2p_txns</th>
+      <th>mobilemoney_outgoing_p2p_contacts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1068395</td>
+      <td>54</td>
+      <td>46</td>
+      <td>46</td>
+      <td>38</td>
+      <td>33</td>
+      <td>32</td>
+      <td>16</td>
+      <td>13</td>
+      <td>14</td>
+      <td>...</td>
+      <td>30.222473</td>
+      <td>70.803710</td>
+      <td>206.221286</td>
+      <td>180.20338</td>
+      <td>239.67809</td>
+      <td>158.092635</td>
+      <td>109.399680</td>
+      <td>185.19756</td>
+      <td>6.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1088875</td>
+      <td>55</td>
+      <td>45</td>
+      <td>48</td>
+      <td>39</td>
+      <td>34</td>
+      <td>32</td>
+      <td>16</td>
+      <td>11</td>
+      <td>16</td>
+      <td>...</td>
+      <td>36.724060</td>
+      <td>65.197014</td>
+      <td>174.832893</td>
+      <td>94.95520</td>
+      <td>260.03677</td>
+      <td>125.468370</td>
+      <td>58.231140</td>
+      <td>209.75879</td>
+      <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1151815</td>
+      <td>52</td>
+      <td>43</td>
+      <td>42</td>
+      <td>36</td>
+      <td>30</td>
+      <td>29</td>
+      <td>16</td>
+      <td>13</td>
+      <td>13</td>
+      <td>...</td>
+      <td>25.403230</td>
+      <td>69.630840</td>
+      <td>197.661448</td>
+      <td>143.49661</td>
+      <td>251.89214</td>
+      <td>151.198061</td>
+      <td>101.536630</td>
+      <td>226.48890</td>
+      <td>9.0</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1155381</td>
+      <td>56</td>
+      <td>46</td>
+      <td>42</td>
+      <td>40</td>
+      <td>33</td>
+      <td>28</td>
+      <td>16</td>
+      <td>13</td>
+      <td>14</td>
+      <td>...</td>
+      <td>35.615395</td>
+      <td>63.297916</td>
+      <td>205.654711</td>
+      <td>158.98051</td>
+      <td>267.41220</td>
+      <td>152.560454</td>
+      <td>101.690550</td>
+      <td>214.87619</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1159103</td>
+      <td>53</td>
+      <td>42</td>
+      <td>42</td>
+      <td>38</td>
+      <td>32</td>
+      <td>28</td>
+      <td>15</td>
+      <td>10</td>
+      <td>14</td>
+      <td>...</td>
+      <td>43.855840</td>
+      <td>65.405270</td>
+      <td>197.622427</td>
+      <td>157.64932</td>
+      <td>236.83188</td>
+      <td>147.132861</td>
+      <td>111.951840</td>
+      <td>192.97603</td>
+      <td>5.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>4042803</td>
+      <td>55</td>
+      <td>42</td>
+      <td>50</td>
+      <td>39</td>
+      <td>32</td>
+      <td>35</td>
+      <td>16</td>
+      <td>10</td>
+      <td>15</td>
+      <td>...</td>
+      <td>44.085785</td>
+      <td>69.810104</td>
+      <td>209.323082</td>
+      <td>135.56276</td>
+      <td>246.69228</td>
+      <td>154.552682</td>
+      <td>88.004130</td>
+      <td>200.23488</td>
+      <td>6.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>4043022</td>
+      <td>55</td>
+      <td>44</td>
+      <td>46</td>
+      <td>39</td>
+      <td>32</td>
+      <td>32</td>
+      <td>16</td>
+      <td>12</td>
+      <td>14</td>
+      <td>...</td>
+      <td>31.741247</td>
+      <td>66.080310</td>
+      <td>211.444359</td>
+      <td>167.15100</td>
+      <td>280.66760</td>
+      <td>162.220635</td>
+      <td>112.452990</td>
+      <td>225.88815</td>
+      <td>10.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>4044894</td>
+      <td>54</td>
+      <td>44</td>
+      <td>47</td>
+      <td>39</td>
+      <td>31</td>
+      <td>34</td>
+      <td>15</td>
+      <td>13</td>
+      <td>13</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>4124137</td>
+      <td>55</td>
+      <td>48</td>
+      <td>42</td>
+      <td>39</td>
+      <td>36</td>
+      <td>29</td>
+      <td>16</td>
+      <td>12</td>
+      <td>13</td>
+      <td>...</td>
+      <td>52.455593</td>
+      <td>56.009243</td>
+      <td>217.303070</td>
+      <td>176.89285</td>
+      <td>257.71330</td>
+      <td>163.070656</td>
+      <td>120.883606</td>
+      <td>205.25770</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>4127069</td>
+      <td>53</td>
+      <td>45</td>
+      <td>48</td>
+      <td>38</td>
+      <td>32</td>
+      <td>34</td>
+      <td>15</td>
+      <td>13</td>
+      <td>14</td>
+      <td>...</td>
+      <td>44.286804</td>
+      <td>63.472633</td>
+      <td>197.734881</td>
+      <td>135.41609</td>
+      <td>247.85318</td>
+      <td>143.477983</td>
+      <td>72.656730</td>
+      <td>197.07712</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 1122 columns</p>
+</div></div></div>
+</div>
+<p>Plot the distributions of some of the features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">feature_plots</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6edc93f3bd147a3ba30a78f00d565a62afa0922a3b5f52e6823bb29381fdb563.png" src="../_images/6edc93f3bd147a3ba30a78f00d565a62afa0922a3b5f52e6823bb29381fdb563.png" />
+<img alt="../_images/c3c7b99b062a9f9ee1cf41f6a003a421b71fdb662588ede5ec2413f61897d445.png" src="../_images/c3c7b99b062a9f9ee1cf41f6a003a421b71fdb662588ede5ec2413f61897d445.png" />
+<img alt="../_images/9fcbe07490156ff9658869bf0e6fa1ab0929988014225addcce8ae26281bfbb2.png" src="../_images/9fcbe07490156ff9658869bf0e6fa1ab0929988014225addcce8ae26281bfbb2.png" />
+<img alt="../_images/37b2c26dfbb4a4ceb51d0c939770a0847ab4758fa0c3b64eb6387aea96bf0a86.png" src="../_images/37b2c26dfbb4a4ceb51d0c939770a0847ab4758fa0c3b64eb6387aea96bf0a86.png" />
+<img alt="../_images/4ae30826fdf415159b089bfda3e84ddab796623ca49d0db0211094e9549f9138.png" src="../_images/4ae30826fdf415159b089bfda3e84ddab796623ca49d0db0211094e9549f9138.png" />
+<img alt="../_images/3e33209d627669119e29153792b348d13c767db3cf54abc0a6384d3674d764f7.png" src="../_images/3e33209d627669119e29153792b348d13c767db3cf54abc0a6384d3674d764f7.png" />
+<img alt="../_images/ca450cfe24392609460b6116a1cde5bf5a41d900340b1f33da06c7ef3239024a.png" src="../_images/ca450cfe24392609460b6116a1cde5bf5a41d900340b1f33da06c7ef3239024a.png" />
+<img alt="../_images/5de62f65cbb0fa0afd91a65567f60364ff190cb253fe2f989b8fd023d19811a1.png" src="../_images/5de62f65cbb0fa0afd91a65567f60364ff190cb253fe2f989b8fd023d19811a1.png" />
+<img alt="../_images/5f524efa164892e810237833d7bcbf1fa1378fe587a85fd113228f739ce3b11c.png" src="../_images/5f524efa164892e810237833d7bcbf1fa1378fe587a85fd113228f739ce3b11c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">featurizer</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;cdr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>active_days_allweek_allday</th>
+      <th>active_days_allweek_day</th>
+      <th>active_days_allweek_night</th>
+      <th>active_days_weekday_allday</th>
+      <th>active_days_weekday_day</th>
+      <th>active_days_weekday_night</th>
+      <th>active_days_weekend_allday</th>
+      <th>active_days_weekend_day</th>
+      <th>active_days_weekend_night</th>
+      <th>...</th>
+      <th>frequent_antennas_weekend_night</th>
+      <th>percent_at_home_allweek_allday</th>
+      <th>percent_at_home_allweek_day</th>
+      <th>percent_at_home_allweek_night</th>
+      <th>percent_at_home_weekday_allday</th>
+      <th>percent_at_home_weekday_day</th>
+      <th>percent_at_home_weekday_night</th>
+      <th>percent_at_home_weekend_allday</th>
+      <th>percent_at_home_weekend_day</th>
+      <th>percent_at_home_weekend_night</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8800180230345</td>
+      <td>54</td>
+      <td>46</td>
+      <td>46</td>
+      <td>38</td>
+      <td>33</td>
+      <td>32</td>
+      <td>16</td>
+      <td>13</td>
+      <td>14</td>
+      <td>...</td>
+      <td>19</td>
+      <td>0.022472</td>
+      <td>0.0</td>
+      <td>0.050633</td>
+      <td>0.032000</td>
+      <td>0.0</td>
+      <td>0.072727</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8800180243041</td>
+      <td>56</td>
+      <td>51</td>
+      <td>44</td>
+      <td>41</td>
+      <td>36</td>
+      <td>32</td>
+      <td>15</td>
+      <td>15</td>
+      <td>12</td>
+      <td>...</td>
+      <td>19</td>
+      <td>0.015625</td>
+      <td>0.0</td>
+      <td>0.034091</td>
+      <td>0.021429</td>
+      <td>0.0</td>
+      <td>0.045455</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8800180289747</td>
+      <td>57</td>
+      <td>45</td>
+      <td>45</td>
+      <td>41</td>
+      <td>34</td>
+      <td>32</td>
+      <td>16</td>
+      <td>11</td>
+      <td>13</td>
+      <td>...</td>
+      <td>24</td>
+      <td>0.018987</td>
+      <td>0.0</td>
+      <td>0.036585</td>
+      <td>0.019608</td>
+      <td>0.0</td>
+      <td>0.039216</td>
+      <td>0.017857</td>
+      <td>0.0</td>
+      <td>0.032258</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8800180319649</td>
+      <td>54</td>
+      <td>47</td>
+      <td>46</td>
+      <td>40</td>
+      <td>35</td>
+      <td>33</td>
+      <td>14</td>
+      <td>12</td>
+      <td>13</td>
+      <td>...</td>
+      <td>19</td>
+      <td>0.012903</td>
+      <td>0.0</td>
+      <td>0.027778</td>
+      <td>0.017544</td>
+      <td>0.0</td>
+      <td>0.041667</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8800180525857</td>
+      <td>53</td>
+      <td>41</td>
+      <td>44</td>
+      <td>39</td>
+      <td>31</td>
+      <td>33</td>
+      <td>14</td>
+      <td>10</td>
+      <td>11</td>
+      <td>...</td>
+      <td>16</td>
+      <td>0.018750</td>
+      <td>0.0</td>
+      <td>0.037037</td>
+      <td>0.024000</td>
+      <td>0.0</td>
+      <td>0.049180</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 709 columns</p>
+</div></div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda_cider3.9"
+        },
+        kernelOptions: {
+            name: "conda_cider3.9",
+            path: "./quickstart"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda_cider3.9'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="poverty_survey.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Poverty Outcome Generation from Survey Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="documentation_ml.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine Learning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By UC Berkeley Global Policy Lab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
