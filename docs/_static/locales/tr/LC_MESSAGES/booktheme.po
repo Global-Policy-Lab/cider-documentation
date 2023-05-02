@@ -8,8 +8,29 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "By"
+msgstr "Tarafından"
+
 msgid "repository"
 msgstr "depo"
+
+msgid "Fullscreen mode"
+msgstr "Tam ekran modu"
+
+msgid "Contents"
+msgstr "İçindekiler"
+
+msgid "Download source file"
+msgstr "Kaynak dosyayı indirin"
+
+msgid "Edit this page"
+msgstr "Bu sayfayı düzenle"
+
+msgid "Last updated on"
+msgstr "Son güncelleme tarihi"
+
+msgid "Print to PDF"
+msgstr "PDF olarak yazdır"
 
 msgid "suggest edit"
 msgstr "düzenleme öner"
@@ -35,41 +56,14 @@ msgstr "Kaynak kod deposu"
 msgid "open issue"
 msgstr "Açık konu"
 
-msgid "Contents"
-msgstr "İçindekiler"
+msgid "Download notebook file"
+msgstr "Defter dosyasını indirin"
 
-msgid "Fullscreen mode"
-msgstr "Tam ekran modu"
-
-msgid "Download this page"
-msgstr "Bu sayfayı indirin"
-
-msgid "Download source file"
-msgstr "Kaynak dosyayı indirin"
-
-msgid "Launch"
-msgstr "Başlatmak"
-
-msgid "Edit this page"
-msgstr "Bu sayfayı düzenle"
-
-msgid "Toggle navigation"
-msgstr "Gezinmeyi değiştir"
+msgid "Copyright"
+msgstr "Telif hakkı"
 
 msgid "Theme by the"
 msgstr "Tarafından tema"
-
-msgid "Source repository"
-msgstr "Kaynak kod deposu"
-
-msgid "Last updated on"
-msgstr "Son güncelleme tarihi"
-
-msgid "By the"
-msgstr "Tarafından"
-
-msgid "Sphinx Book Theme"
-msgstr "Sfenks Kitap Teması"
 
 msgid "Open an issue"
 msgstr "Bir sorunu açın"
@@ -77,26 +71,5 @@ msgstr "Bir sorunu açın"
 msgid "next page"
 msgstr "sonraki Sayfa"
 
-msgid "Copyright"
-msgstr "Telif hakkı"
-
-msgid "Search this book..."
-msgstr "Bu kitabı ara ..."
-
-msgid "Print to PDF"
-msgstr "PDF olarak yazdır"
-
-msgid "By"
-msgstr "Tarafından"
-
-msgid "previous page"
-msgstr "önceki sayfa"
-
-msgid "Search the docs ..."
-msgstr "Belgelerde ara ..."
-
-msgid "Download notebook file"
-msgstr "Defter dosyasını indirin"
-
-msgid "suggest edit"
-msgstr "düzenleme öner"
+msgid "Launch"
+msgstr "Başlatmak"
