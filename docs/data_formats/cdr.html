@@ -497,8 +497,14 @@ Unique ID for the caller or sender</p>
 Unique ID for the recipient</p>
 <p>*<strong>timestamp</strong>: <em>string</em> <br>
 String in format ‘YYYY-MM-DD hh:mm:ss’ representing the start time of a call or the time an text is sent</p>
-<p><strong>duration</strong>: <em>float</em> <br>
+<p>*<strong>duration</strong>: <em>float</em> <br>
 Call duration in seconds. NaN or empty string for SMS messages or calls missing duration</p>
+<p><strong>caller_antenna</strong>: <em>string</em> <br>
+Identifier for antenna used by caller</p>
+<p><strong>recipient_antenna</strong>: <em>string</em> <br>
+Identifier for antenna used by recipient</p>
+<p>*<strong>international</strong>: <em>string</em> <br>
+International/domestic status of the call. Values must all be either ‘domestic’ or “international’.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Columns without a preceding asterisk ‘*’ are optional</p>

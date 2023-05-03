@@ -12,7 +12,7 @@ Example file: `synthetic_data/recharges.csv` <br>
 ***caller_id**: _string_ <br>
 Unique ID for the subscriber
 
-**amount**: _float_ <br>
+***amount**: _float_ <br>
 Amount of the recharge (in any currency)
 
 ***timestamp**: _string_ <br>
