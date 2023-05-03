@@ -18,6 +18,7 @@ parts:
     - file: quickstart/installation
     - file: quickstart/config
     - file: quickstart/poverty_survey
+    - file: quickstart/documentation_anonymizer
     - file: quickstart/documentation_featurizer
     - file: quickstart/documentation_ml
     - file: quickstart/documentation_home_location
