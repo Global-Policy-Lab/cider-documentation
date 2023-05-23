@@ -19,11 +19,11 @@ need not be included if not provided by the mobile network operator (or tower ID
 clustering of antennas). 
 
 
-**latitude**: _float_ <br>
+***latitude**: _float_ <br>
 Latitude of the antenna
 
 
-**longitude**: _float_ <br>
+***longitude**: _float_ <br>
 Longitude of the antenna
 
 
