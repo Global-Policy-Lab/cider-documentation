@@ -447,15 +447,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/23 12:01:30 WARN Utils: Your hostname, MacBook-Pro.local resolves to a loopback address: 127.0.0.1; using 10.0.0.43 instead (on interface en0)
-23/05/23 12:01:30 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/24 13:54:44 WARN Utils: Your hostname, MacBook-Pro.local resolves to a loopback address: 127.0.0.1; using 10.0.0.43 instead (on interface en0)
+23/05/24 13:54:44 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting default log level to &quot;WARN&quot;.
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/23 12:01:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/24 13:54:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
@@ -598,9 +598,6 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1099,7 +1096,7 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
 <p>It is a good idea to check the format of numbers as you anonymize them to make sure they have been processed according to expectations. Because the anonymizer uses a hash function, similar numbers will <em>not</em> result in similar anonymized strings. For example, the numbers 1234567, 01234567, and 880 1234567 will all result in completely different anonymized strings.</p>
 <p>The Anonymizer object accepts a format checker when it’s constructed. The checker will be evaluated on inputs as strings, and should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the format is acceptable and <code class="docutils literal notranslate"><span class="pre">False</span></code> if not.</p>
 <p>Anonymization will fail if any number fails this check. So we encourage you to clean your data prior to passing it through this step.</p>
-<p>This demo is based on a simplified version of Bangladesh’s <a class="reference external" href="https://en.wikipedia.org/wiki/Telephone_numbers_in_Bangladesh">mobile phone number format</a>. We’re assuming that leading “0”, “880”, and “+” are removed, which leaves a ten-digit number in all cases.</p>
+<p>This demo is based on a simplified version of Bangladesh’s <a class="reference external" href="https://en.wikipedia.org/wiki/Telephone_numbers_in_Bangladesh">mobile phone number format</a>. We’re assuming that leading “0”, “880”, and “+” are removed, which means all numbers will be ten digits and will not start with “0”.</p>
 <p>It’s important to be consistent in how phone numbers are provided. For example, if a number is represented differently based on where the call is dialed from, it’s necessary to normalize: Perhaps by stripping the country code and also the domestic prefix (here ‘0’), and by stripping the operator prefix. The anonymizer does not intelligently map two representations of the same number to the same string. Cider expects information about whether calls/texts are domestic or international to be provided. So it’s likely users will already have checked number prefixes, and perhaps removed them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1109,9 +1106,6 @@ a given subscriber’s data is indexed by the same obfuscated string.</p>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;starts with 0. Please strip leading zeros from numbers.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">if</span> <span class="n">x</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;880&quot;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;starts with 880. Please strip leading 880 from numbers.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="n">sl</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">sl</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
@@ -1163,42 +1157,11 @@ Loading mobile money...
 4           a261              a268      domestic 2020-01-01  
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00180479117 starts with 0. Please strip leading zeros from numbers. (0 + 2) / 2]
-8800180789080 starts with 880. Please strip leading 880 from numbers.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valid numbers have ten digits; 8800180789080 has 13
+00180479117 starts with 0. Please strip leading zeros from numbers.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/23 13:06:57 ERROR Executor: Exception in task 1.0 in stage 98.0 (TID 95)
-org.apache.spark.api.python.PythonException: Traceback (most recent call last):
-  File &quot;/Users/mlevy/Dropbox/professional/givedirectly/cider/cider/anonymizer.py&quot;, line 142, in &lt;lambda&gt;
-    lambda raw: Anonymizer._check_identifier_format_and_hash(raw, encoder, format_checker), StringType()
-  File &quot;/Users/mlevy/Dropbox/professional/givedirectly/cider/cider/anonymizer.py&quot;, line 197, in _check_identifier_format_and_hash
-    raise ValueError(f&#39;Bad input to anonymization: {raw_string} rejected by provided format format_checker.&#39;)
-ValueError: Bad input to anonymization: 8800180789080 rejected by provided format format_checker.
-
-	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:552)
-	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:86)
-	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:68)
-	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:505)
-	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
-	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
-	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
-	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
-	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$1.hasNext(WholeStageCodegenExec.scala:760)
-	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
-	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)
-	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)
-	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
-	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:52)
-	at org.apache.spark.scheduler.Task.run(Task.scala:136)
-	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
-	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
-	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-23/05/23 13:06:57 ERROR Executor: Exception in task 0.0 in stage 98.0 (TID 94)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23/05/24 13:55:20 ERROR Executor: Exception in task 0.0 in stage 49.0 (TID 45)
 org.apache.spark.api.python.PythonException: Traceback (most recent call last):
   File &quot;/Users/mlevy/Dropbox/professional/givedirectly/cider/cider/anonymizer.py&quot;, line 142, in &lt;lambda&gt;
     lambda raw: Anonymizer._check_identifier_format_and_hash(raw, encoder, format_checker), StringType()
@@ -1229,12 +1192,43 @@ ValueError: Bad input to anonymization: 00180479117 rejected by provided format 
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
-23/05/23 13:06:57 ERROR TaskSetManager: Task 1 in stage 98.0 failed 1 times; aborting job
+23/05/24 13:55:20 ERROR Executor: Exception in task 1.0 in stage 49.0 (TID 46)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File &quot;/Users/mlevy/Dropbox/professional/givedirectly/cider/cider/anonymizer.py&quot;, line 142, in &lt;lambda&gt;
+    lambda raw: Anonymizer._check_identifier_format_and_hash(raw, encoder, format_checker), StringType()
+  File &quot;/Users/mlevy/Dropbox/professional/givedirectly/cider/cider/anonymizer.py&quot;, line 197, in _check_identifier_format_and_hash
+    raise ValueError(f&#39;Bad input to anonymization: {raw_string} rejected by provided format format_checker.&#39;)
+ValueError: Bad input to anonymization: 8800180789080 rejected by provided format format_checker.
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:552)
+	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:86)
+	at org.apache.spark.sql.execution.python.PythonUDFRunner$$anon$2.read(PythonUDFRunner.scala:68)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:505)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$1.hasNext(WholeStageCodegenExec.scala:760)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)
+	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:52)
+	at org.apache.spark.scheduler.Task.run(Task.scala:136)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+23/05/24 13:55:20 ERROR TaskSetManager: Task 0 in stage 49.0 failed 1 times; aborting job
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">PythonException</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">datastore</span><span class="o">.</span><span class="n">cdr</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">anonymizer_with_check</span><span class="o">.</span><span class="n">anonymize_cdr</span><span class="p">()</span>
 
@@ -1295,7 +1289,7 @@ ValueError: Bad input to anonymization: 00180479117 rejected by provided format 
     <span class="k">lambda</span> <span class="n">raw</span><span class="p">:</span> <span class="n">Anonymizer</span><span class="o">.</span><span class="n">_check_identifier_format_and_hash</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">format_checker</span><span class="p">),</span> <span class="n">StringType</span><span class="p">()</span>
   <span class="n">File</span> <span class="s2">&quot;/Users/mlevy/Dropbox/professional/givedirectly/cider/cider/anonymizer.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">197</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_check_identifier_format_and_hash</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Bad input to anonymization: </span><span class="si">{</span><span class="n">raw_string</span><span class="si">}</span><span class="s1"> rejected by provided format format_checker.&#39;</span><span class="p">)</span>
-<span class="ne">ValueError</span>: Bad input to anonymization: 8800180789080 rejected by provided format format_checker.
+<span class="ne">ValueError</span>: Bad input to anonymization: 00180479117 rejected by provided format format_checker.
 </pre></div>
 </div>
 </div>
