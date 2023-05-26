@@ -169,6 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="quickstart/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/config.html">Configuration file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/poverty_survey.html">Poverty Outcome Generation from Survey Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/documentation_anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/documentation_featurizer.html">Featurizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/documentation_ml.html">Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/documentation_home_location.html">Home Location Inference</a></li>
@@ -402,8 +403,9 @@ document.write(`
 <ul class="simple">
 <li><p>Make changes to source</p></li>
 <li><p>Build the changes using jupyter-book</p></li>
-<li><p>Copy the contents of _build/html into docs. You can check you did this right by confirming that docs/index.html exists</p></li>
-<li><p>Propagate the changes to the remote gh-pages branch on Github</p></li>
+<li><p>Delete the contents of the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder, and then copy the contents of <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code> into<code class="docutils literal notranslate"><span class="pre">docs/</span></code>.</p></li>
+<li><p>Create an empty file called <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> in the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder.</p></li>
+<li><p>Push your changes to your remote branch, then merge to the main branch of the repo. They should then be live within a couple of minutes. It’s worth checking <a class="reference external" href="https://global-policy-lab.github.io/cider-documentation/intro.html">the live docs</a> to make sure everything worked.</p></li>
 </ul>
 </section>
 

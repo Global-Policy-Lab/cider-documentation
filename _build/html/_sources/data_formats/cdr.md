@@ -23,9 +23,17 @@ Unique ID for the recipient
 ***timestamp**: _string_ <br>
 String in format ‘YYYY-MM-DD hh:mm:ss’ representing the start time of a call or the time an text is sent
 
-**duration**: _float_ <br>
+***duration**: _float_ <br>
 Call duration in seconds. NaN or empty string for SMS messages or calls missing duration
 
+**caller_antenna**: _string_ <br>
+Identifier for antenna used by caller
+
+**recipient_antenna**: _string_ <br>
+Identifier for antenna used by recipient
+
+***international**: _string_ <br>
+International/domestic status of the call. Values must all be either 'domestic' or "international'.
 ```{note}
 Columns without a preceding asterisk '*' are optional
 ```

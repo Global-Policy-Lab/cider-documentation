@@ -12,7 +12,7 @@ Example file: `synthetic_data/mobiledata.csv` <br>
 ***caller_id**: _string_ <br>
 Unique ID for the subscriber
 
-**volume**: _float_ <br>
+***volume**: _float_ <br>
 Volume of data consumed (upload or download), in any denomination
 
 ***timestamp**: _string_ <br>

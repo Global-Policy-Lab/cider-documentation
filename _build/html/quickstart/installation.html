@@ -171,6 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poverty_survey.html">Poverty Outcome Generation from Survey Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_anonymizer.html">Anonymizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="documentation_featurizer.html">Featurizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="documentation_ml.html">Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="documentation_home_location.html">Home Location Inference</a></li>
@@ -470,7 +471,7 @@ document.write(`
 <section id="to-work-in-a-jupyter-notebook">
 <h3>To work in a Jupyter notebook<a class="headerlink" href="#to-work-in-a-jupyter-notebook" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Activate the conda environment created in the script above: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">py39</span></code></p></li>
+<li><p>Make sure you have Jupyter installed, and/or that you’re in a virtual environment with Jupyter installed.</p></li>
 <li><p>Start jupyter notebooks: <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">--no-browser</span> <span class="pre">--port=8888</span></code></p></li>
 <li><p>Leave that ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-i</span> <span class="pre">&quot;path/key.pem&quot;</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8888</span> <span class="pre">ubuntu&#64;ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com</span></code></p></li>
 <li><p>Open a browser window and go to <code class="docutils literal notranslate"><span class="pre">localhost:8000</span></code></p>
@@ -484,7 +485,7 @@ document.write(`
 </section>
 <section id="on-apple-silicon-m1-m2-etc">
 <h2>On Apple Silicon (M1, M2, etc.)<a class="headerlink" href="#on-apple-silicon-m1-m2-etc" title="Permalink to this heading">#</a></h2>
-<p>The above may not work on Apple processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple’s M1 chips use).</p>
+<p>The above may not work on Apple processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple’s chips use).</p>
 <p><a class="reference external" href="https://towardsdatascience.com/how-to-manage-conda-environments-on-an-apple-silicon-m1-mac-1e29cb3bad12">This guide</a> contains details on setting up Conda and creating such an environment. Summarized, the steps are as follows:</p>
 <ol class="arabic simple">
 <li><p>Install conda, likely <a class="reference external" href="https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/">Miniconda</a></p></li>
@@ -497,6 +498,7 @@ document.write(`
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">swig</span></code></p></li>
+<li><p>If you plan on using Poetry: Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">poetry</span></code>, even if you already have Poetry installed. Installing with your x86 conda environment ensures that Poetry will install x86 versions of dependencies. Conda depends on Pip by default, so pip commands will work out of the box.</p></li>
 </ol>
 <p>And then follow either of the installation procedures above from within the environment you just created.</p>
 </section>

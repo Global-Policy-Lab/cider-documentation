@@ -54,7 +54,7 @@ source ~/.bashrc
 ```
 
 #### To work in a Jupyter notebook
-- Activate the conda environment created in the script above: `conda activate py39`
+- Make sure you have Jupyter installed, and/or that you're in a virtual environment with Jupyter installed.
 - Start jupyter notebooks: `jupyter notebook --no-browser --port=8888`
 - Leave that ssh session running, open a new terminal window, and execute the following, substituting the path to your key and EC2 address, as above: `ssh -i "path/key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`
 - Open a browser window and go to `localhost:8000`
@@ -62,7 +62,7 @@ source ~/.bashrc
 - In the browser, create a notebook via the "New" menu button and select "Python [conda env:py39]"
 
 ### On Apple Silicon (M1, M2, etc.)
-The above may not work on Apple processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use [conda](https://docs.conda.io/en/latest/) to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple's M1 chips use).
+The above may not work on Apple processors due to certain dependencies being unavailable or behaving badly. One option to sidestep this issue is to use [conda](https://docs.conda.io/en/latest/) to create a virtual environment which uses x86 architecture (rather than the ARM64 architecture which Apple's chips use).
 
 [This guide](https://towardsdatascience.com/how-to-manage-conda-environments-on-an-apple-silicon-m1-mac-1e29cb3bad12) contains details on setting up Conda and creating such an environment. Summarized, the steps are as follows:
 
@@ -74,5 +74,6 @@ conda activate my_env_name
 conda config --env --set subdir osx-64
 ```
 3. Run `conda install swig`
+4. If you plan on using Poetry: Run `conda install -c conda-forge poetry`, even if you already have Poetry installed. Installing with your x86 conda environment ensures that Poetry will install x86 versions of dependencies. Conda depends on Pip by default, so pip commands will work out of the box.
 
 And then follow either of the installation procedures above from within the environment you just created.
