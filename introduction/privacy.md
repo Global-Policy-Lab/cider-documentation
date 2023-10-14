@@ -1,4 +1,4 @@
-# Adherance to data privacy standards
+# Adherence to data privacy standards
 
 Cider works with  individual mobile phone data, which is personally identifiable information. The use of cider must be in compliance with local data protection laws. We additionally recommend referring to the following guidelines to design a data flow that adheres to international standards:
 
